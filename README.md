@@ -27,15 +27,17 @@ https://ai-healthy-assistant.streamlit.app/
 ```bash
 git clone https://github.com/username/ai-healthy-assistant.git
 cd ai-healthy-assistant
+```
 
 #### 2. Install Dependencies
 ```bash
 pip install -r requirements.txt
+```
 
 #### 3. Setup API Key
 ```bash
 GROQ_API_KEY = "API_KEY_KAMU"
-
+```
 Catatan:
 - File .env.example hanya sebagai contoh
 - Gunakan .env untuk menyimpan API key asli
@@ -43,3 +45,4 @@ Catatan:
 #### 4. Jalankan Aplikasi
 ```bash
 streamlit run app.py
+```
