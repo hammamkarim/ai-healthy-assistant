@@ -46,3 +46,13 @@ Catatan:
 ```bash
 streamlit run app.py
 ```
+---
+
+## 🧠 Teknologi yang Digunakan
+- Streamlit (Frontend)
+- Groq - LLaMA (LLM / Text-to-Text)
+- gTTS (Text-to-Speech)
+---
+
+## ⚠️ Disclaimer
+Aplikasi ini hanya bertujuan untuk edukasi dan tidak menggantikan tenaga medis profesional.
