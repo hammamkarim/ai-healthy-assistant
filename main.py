@@ -1,70 +1,125 @@
-from groq import Groq
 import os
-from dotenv import load_dotenv
 from gtts import gTTS
 import time
 print()
 
-# Load .env
-load_dotenv()
+from transformers import AutoTokenizer
+from transformers import AutoModelForCausalLM
 
-api_key = os.getenv("GROQ_API_KEY")
+MODEL_NAME = "Qwen/Qwen2.5-3B-Instruct"
 
-# Debug
-print("API KEY loaded:", "YES" if api_key else "NO")
+print("Loading Qwen2.5-3B-Instruct...")
+print("First run may take several minutes because the model will be downloaded.")
 
-if not api_key:
-    raise ValueError("API KEY tidak ditemukan!")
+tokenizer = AutoTokenizer.from_pretrained(
+    MODEL_NAME
+)
 
-# Setup client
-client = Groq(api_key=api_key)
+model = AutoModelForCausalLM.from_pretrained(
+    MODEL_NAME
+)
 
+print("Model loaded!")
 
 def generate_health_advice(user_input):
+
     prompt = f"""
-    Berikan saran kesehatan berdasarkan kondisi pengguna berikut.
+Kamu adalah asisten kesehatan yang memberikan saran sederhana, aman, dan tidak mendiagnosis penyakit.
 
-    Fokuskan saran pada perbaikan pola hidup sehat pengguna dan sesuaikan dengan kondisi yang dialami.
+Berikan saran kesehatan berdasarkan kondisi pengguna berikut.
 
-    Tuliskan jawaban dalam bentuk yang natural dan mengalir, seperti berbicara langsung kepada pengguna.
+Fokuskan saran pada perbaikan pola hidup sehat pengguna dan sesuaikan dengan kondisi yang dialami.
 
-    Struktur jawaban:
-    - Awali dengan kalimat yang menunjukkan kamu memahami kondisi pengguna
-    - Jelaskan secara singkat penyebab atau dampaknya
-    - Berikan saran menggunakan penomoran (1, 2, 3, dst)
-    - Akhiri dengan penutup berupa anjuran umum, termasuk saran untuk berkonsultasi ke tenaga medis jika kondisi berlanjut
+Gunakan bahasa Indonesia.
 
-    PENTING:
-    - Jangan gunakan tanda bintang (*), bullet (-), atau format markdown
-    - Gunakan angka (1, 2, 3, dst)
-    - Gunakan kata ganti "kamu"
-    - Gunakan bahasa sederhana dan mudah dipahami
-    - Hindari memberikan diagnosis penyakit
-    - Hindari menyebutkan obat atau tindakan medis spesifik
+Kamu hanya boleh menjawab pertanyaan yang berkaitan dengan:
+- kesehatan
+- pola hidup sehat
+- nutrisi
+- olahraga
+- kebugaran
+- tidur
+- hidrasi
+- kesehatan mental ringan
 
-    Input:
-    {user_input}
-    """
+Jika pertanyaan pengguna berada di luar topik tersebut, jawab HANYA dengan:
+
+"Maaf, saya hanya dapat membantu pertanyaan yang berkaitan dengan kesehatan dan pola hidup sehat."
+
+Untuk pertanyaan kesehatan:
+
+- Awali dengan kalimat yang menunjukkan kamu memahami kondisi pengguna.
+- Jelaskan secara singkat penyebab atau dampaknya.
+- Berikan saran menggunakan penomoran (1, 2, 3, dst).
+- Akhiri dengan anjuran umum dan saran berkonsultasi ke tenaga medis jika kondisi berlanjut.
+
+PENTING:
+- Jangan gunakan tanda bintang (*).
+- Jangan gunakan bullet (-).
+- Jangan gunakan markdown.
+- Gunakan angka (1, 2, 3, dst).
+- Gunakan kata ganti "kamu".
+- Gunakan bahasa sederhana dan mudah dipahami.
+- Hindari memberikan diagnosis penyakit.
+- Hindari menyebutkan obat atau tindakan medis spesifik.
+- Berikan maksimal 4 saran.
+- Jangan memberikan lebih dari 4 poin.
+- Setiap poin maksimal 1-2 kalimat.
+
+Input Pengguna:
+{user_input}
+
+Jawaban:
+"""
 
     try:
-        response = client.chat.completions.create(
-            model="llama-3.1-8b-instant",
-            messages=[
-                {
-                    "role": "system",
-                    "content": "Kamu adalah asisten kesehatan yang memberikan saran sederhana, aman, dan tidak mendiagnosis penyakit."
-                },
-                {"role": "user", "content": prompt}
-            ],
-            max_tokens=500,
-            temperature=0.8
+
+        messages = [
+            {
+                "role": "system",
+                "content": """Kamu adalah asisten kesehatan yang memberikan saran sederhana, aman, dan tidak mendiagnosis penyakit."""
+            },
+            {
+                "role": "user",
+                "content": prompt
+            }
+        ]
+
+        text = tokenizer.apply_chat_template(
+            messages,
+            tokenize=False,
+            add_generation_prompt=True
         )
 
-        return response.choices[0].message.content.strip()
+        inputs = tokenizer(
+            text,
+            return_tensors="pt"
+        )
+
+        outputs = model.generate(
+            **inputs,
+            max_new_tokens=250,
+            temperature=0.7,
+            do_sample=True,
+            repetition_penalty=1.2,
+            pad_token_id=tokenizer.eos_token_id
+        )
+
+        response = tokenizer.decode(
+            outputs[0][inputs["input_ids"].shape[1]:],
+            skip_special_tokens=True
+        )
+
+        print("\n=== DEBUG RAW OUTPUT ===\n")
+        print(response)
+
+        return response
 
     except Exception as e:
-        print("\nERROR API:")
+
+        print("\nERROR MODEL:")
         print(e)
+
         return "Maaf, terjadi kesalahan saat memproses permintaan."
 
 
@@ -91,7 +146,7 @@ def text_to_audio(text):
 
 # TEST
 if __name__ == "__main__":
-    print("=== AI Healthy Assistant (Groq + Audio) ===\n")
+    print("=== AI Healthy Assistant (Qwen Local + Audio) ===\n")
 
     user_input = input("Masukkan keluhan atau kondisi kesehatan kamu: ")
 

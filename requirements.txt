@@ -2,3 +2,8 @@ streamlit
 groq
 python-dotenv
 gtts
+transformers
+torch
+accelerate
+sentencepiece
+safetensors
