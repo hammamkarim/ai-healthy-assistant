@@ -8,3 +8,4 @@ accelerate
 sentencepiece
 safetensors
 piper-tts
+soundfile

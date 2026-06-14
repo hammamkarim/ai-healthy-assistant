@@ -1,10 +1,12 @@
 import os
-from gtts import gTTS
 import time
 print()
 
 from transformers import AutoTokenizer
 from transformers import AutoModelForCausalLM
+
+from piper.voice import PiperVoice
+import wave
 
 MODEL_NAME = "Qwen/Qwen2.5-3B-Instruct"
 
@@ -20,6 +22,20 @@ model = AutoModelForCausalLM.from_pretrained(
 )
 
 print("\nModel berhasil dimuat!")
+
+print("Memuat model suara Piper...")
+# print(os.path.exists("models/piper/id_ID-news_tts-medium.onnx"))
+# print(os.path.exists("models/piper/id_ID-news_tts-medium.onnx.json"))
+
+
+voice = PiperVoice.load(
+    "models/piper/id_ID-news_tts-medium.onnx"
+)
+
+# print(type(voice))
+# print(dir(voice))
+
+print("Model suara berhasil dimuat!")
 
 def generate_health_advice(user_input):
 
@@ -94,7 +110,7 @@ Jawaban:
 
         outputs = model.generate(
             **inputs,
-            max_new_tokens=250,
+            max_new_tokens=350,
             temperature=0.7,
             do_sample=True,
             repetition_penalty=1.2,
@@ -116,25 +132,32 @@ Jawaban:
         return "Maaf, terjadi kesalahan saat memproses permintaan."
 
 
-# Clean text (agar suara lebih natural)
-def clean_text_for_audio(text):
-    return text.replace("\n", " ").strip()
 
-
-# Convert text ke audio
 def text_to_audio(text):
-    try:
-        clean_text = clean_text_for_audio(text)
 
-        filename = f"output_{int(time.time())}.mp3"
-        tts = gTTS(text=clean_text, lang='id')
-        tts.save(filename)
+    try:
+
+        text = text.replace("\n", " ").strip()
+
+        filename = f"outputs/audio/output_{int(time.time())}.wav"
+
+        with wave.open(filename, "wb") as wav_file:
+
+            voice.synthesize_wav(
+                text,
+                wav_file
+            )
 
         return filename
 
     except Exception as e:
-        print("Gagal membuat audio:", e)
+
+        print("Gagal membuat audio:")
+        print(e)
+
         return None
+
+
 
 
 # TEST
@@ -158,6 +181,7 @@ if __name__ == "__main__":
             print(f"\n🔊 Audio berhasil dibuat: {audio_file}")
 
             # Auto play (Windows)
-            os.system(f"start {audio_file}")
+            os.system(f'start "" "{audio_file}"')
+
         else:
             print("Audio gagal dibuat")
