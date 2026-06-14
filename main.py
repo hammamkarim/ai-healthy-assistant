@@ -21,12 +21,14 @@ model = AutoModelForCausalLM.from_pretrained(
     MODEL_NAME
 )
 
-print("\nModel berhasil dimuat!")
+print("\nModel LLM berhasil dimuat!")
+
+conversation_history = []
+MAX_HISTORY = 10
 
 print("Memuat model suara Piper...")
 # print(os.path.exists("models/piper/id_ID-news_tts-medium.onnx"))
 # print(os.path.exists("models/piper/id_ID-news_tts-medium.onnx.json"))
-
 
 voice = PiperVoice.load(
     "models/piper/id_ID-news_tts-medium.onnx"
@@ -37,7 +39,7 @@ voice = PiperVoice.load(
 
 print("Model suara berhasil dimuat!")
 
-def generate_health_advice(user_input):
+def generate_health_advice(user_input, history):
 
     prompt = f"""
 Berikan saran kesehatan berdasarkan kondisi pengguna berikut.
@@ -89,13 +91,20 @@ Jawaban:
         messages = [
             {
                 "role": "system",
-                "content": """Kamu adalah asisten kesehatan yang memberikan saran sederhana, aman, dan tidak mendiagnosis penyakit."""
-            },
+                "content": """
+        Kamu adalah asisten kesehatan yang memberikan saran sederhana, aman, dan tidak mendiagnosis penyakit.
+        """
+            }
+        ]
+
+        messages.extend(history)
+
+        messages.append(
             {
                 "role": "user",
                 "content": prompt
             }
-        ]
+        )
 
         text = tokenizer.apply_chat_template(
             messages,
@@ -110,7 +119,7 @@ Jawaban:
 
         outputs = model.generate(
             **inputs,
-            max_new_tokens=350,
+            max_new_tokens=300,
             temperature=0.7,
             do_sample=True,
             repetition_penalty=1.2,
@@ -122,6 +131,24 @@ Jawaban:
             skip_special_tokens=True
         )
 
+        history.append(
+            {
+                "role": "user",
+                "content": user_input
+            }
+        )
+
+        history.append(
+            {
+                "role": "assistant",
+                "content": response
+            }
+        )
+
+        # Simpan hanya 5 percakapan terakhir
+        if len(history) > MAX_HISTORY:
+            del history[:-MAX_HISTORY]
+
         return response
 
     except Exception as e:
@@ -130,8 +157,6 @@ Jawaban:
         print(e)
 
         return "Maaf, terjadi kesalahan saat memproses permintaan."
-
-
 
 def text_to_audio(text):
 
@@ -157,24 +182,42 @@ def text_to_audio(text):
 
         return None
 
-
-
-
 # TEST
 if __name__ == "__main__":
+
     print("\n=== AI Healthy Assistant ===")
+    print("Kamu dapat bertanya beberapa kali secara berurutan.")
+    print("AI akan mengingat percakapan sebelumnya.")
+    print("Ketik 'reset' untuk memulai percakapan baru.")
+    print("Ketik 'keluar' untuk menutup aplikasi.")
 
-    user_input = input("Masukkan keluhan atau kondisi kesehatan kamu: ")
+    while True:
 
-    if not user_input.strip():
-        print("Input tidak boleh kosong!")
-    else:
-        hasil = generate_health_advice(user_input)
+        user_input = input(
+            "\nMasukkan keluhan atau kondisi kesehatan kamu: "
+        )
+
+        if user_input.lower() == "keluar":
+            print("Sampai jumpa!")
+            break
+
+        if user_input.lower() == "reset":
+            conversation_history.clear()
+            print("Riwayat percakapan berhasil dihapus.")
+            continue
+
+        if not user_input.strip():
+            print("Input tidak boleh kosong!")
+            continue
+
+        hasil = generate_health_advice(
+            user_input,
+            conversation_history
+        )
 
         print("\n=== HASIL AI ===\n")
         print(hasil)
 
-        # Convert ke audio
         audio_file = text_to_audio(hasil)
 
         if audio_file:
