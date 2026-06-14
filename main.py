@@ -9,7 +9,7 @@ from transformers import AutoModelForCausalLM
 MODEL_NAME = "Qwen/Qwen2.5-3B-Instruct"
 
 print("Loading Qwen2.5-3B-Instruct...")
-print("First run may take several minutes because the model will be downloaded.")
+print("Saat pertama kali dijalankan, model akan diunduh. Proses ini mungkin memerlukan beberapa menit.")
 
 tokenizer = AutoTokenizer.from_pretrained(
     MODEL_NAME
@@ -19,13 +19,11 @@ model = AutoModelForCausalLM.from_pretrained(
     MODEL_NAME
 )
 
-print("Model loaded!")
+print("\nModel berhasil dimuat!")
 
 def generate_health_advice(user_input):
 
     prompt = f"""
-Kamu adalah asisten kesehatan yang memberikan saran sederhana, aman, dan tidak mendiagnosis penyakit.
-
 Berikan saran kesehatan berdasarkan kondisi pengguna berikut.
 
 Fokuskan saran pada perbaikan pola hidup sehat pengguna dan sesuaikan dengan kondisi yang dialami.
@@ -50,21 +48,19 @@ Untuk pertanyaan kesehatan:
 
 - Awali dengan kalimat yang menunjukkan kamu memahami kondisi pengguna.
 - Jelaskan secara singkat penyebab atau dampaknya.
-- Berikan saran menggunakan penomoran (1, 2, 3, dst).
+- Berikan saran menggunakan penomoran (1, 2, 3, 4, dst).
 - Akhiri dengan anjuran umum dan saran berkonsultasi ke tenaga medis jika kondisi berlanjut.
 
 PENTING:
-- Jangan gunakan tanda bintang (*).
-- Jangan gunakan bullet (-).
-- Jangan gunakan markdown.
-- Gunakan angka (1, 2, 3, dst).
-- Gunakan kata ganti "kamu".
-- Gunakan bahasa sederhana dan mudah dipahami.
-- Hindari memberikan diagnosis penyakit.
-- Hindari menyebutkan obat atau tindakan medis spesifik.
-- Berikan maksimal 4 saran.
-- Jangan memberikan lebih dari 4 poin.
+- Gunakan bahasa Indonesia yang sederhana dan mudah dipahami.
+- WAJIB menggunakan kata ganti "kamu" dan jangan menggunakan kata "Anda".
+- Gunakan penomoran (1, 2, 3, 4, dst).
+- Maksimal 4 poin saran.
 - Setiap poin maksimal 1-2 kalimat.
+- Jangan menggunakan markdown, bullet (-), atau tanda bintang (*).
+- Jangan memberikan diagnosis penyakit.
+- Jangan menyebutkan obat atau tindakan medis spesifik.
+- Jika informasi pengguna kurang jelas, berikan saran umum yang aman.
 
 Input Pengguna:
 {user_input}
@@ -110,9 +106,6 @@ Jawaban:
             skip_special_tokens=True
         )
 
-        print("\n=== DEBUG RAW OUTPUT ===\n")
-        print(response)
-
         return response
 
     except Exception as e:
@@ -146,7 +139,7 @@ def text_to_audio(text):
 
 # TEST
 if __name__ == "__main__":
-    print("=== AI Healthy Assistant (Qwen Local + Audio) ===\n")
+    print("\n=== AI Healthy Assistant ===")
 
     user_input = input("Masukkan keluhan atau kondisi kesehatan kamu: ")
 

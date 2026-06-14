@@ -7,3 +7,4 @@ torch
 accelerate
 sentencepiece
 safetensors
+piper-tts
