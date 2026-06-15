@@ -1,0 +1,623 @@
+[
+  {
+    "id": 1,
+    "category": "tidur",
+    "question": "Mengapa tidur penting bagi kesehatan tubuh?",
+    "answer": "Tidur yang cukup membantu fungsi tubuh berjalan dengan baik dan dapat mengurangi risiko berbagai penyakit seperti stres, diabetes, dan penyakit jantung.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 2,
+    "category": "tidur",
+    "question": "Apa dampak dari pola tidur yang baik?",
+    "answer": "Pola tidur yang baik membantu menjaga kesehatan tubuh, meningkatkan fungsi organ, dan mendukung aktivitas sehari-hari secara optimal.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 3,
+    "category": "tidur",
+    "question": "Berapa lama waktu tidur yang dibutuhkan bayi usia 0-1 bulan?",
+    "answer": "Bayi usia 0-1 bulan membutuhkan waktu tidur sekitar 14-18 jam per hari.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 4,
+    "category": "tidur",
+    "question": "Berapa lama waktu tidur yang dibutuhkan bayi usia 1-18 bulan?",
+    "answer": "Bayi usia 1-18 bulan membutuhkan waktu tidur sekitar 12-14 jam per hari, termasuk tidur siang.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 5,
+    "category": "tidur",
+    "question": "Berapa lama waktu tidur yang dibutuhkan anak usia 3-6 tahun?",
+    "answer": "Anak usia 3-6 tahun membutuhkan waktu tidur sekitar 11-13 jam per hari, termasuk tidur siang.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 6,
+    "category": "tidur",
+    "question": "Berapa lama waktu tidur yang dibutuhkan anak usia 6-12 tahun?",
+    "answer": "Anak usia 6-12 tahun membutuhkan waktu tidur sekitar 10 jam per hari.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 7,
+    "category": "tidur",
+    "question": "Berapa lama waktu tidur yang dibutuhkan remaja usia 12-18 tahun?",
+    "answer": "Remaja usia 12-18 tahun membutuhkan waktu tidur sekitar 8-9 jam per hari.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 8,
+    "category": "tidur",
+    "question": "Berapa lama waktu tidur yang dibutuhkan orang dewasa usia 18-40 tahun?",
+    "answer": "Orang dewasa usia 18-40 tahun membutuhkan waktu tidur sekitar 7-8 jam per hari.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 9,
+    "category": "tidur",
+    "question": "Mengapa penting mengetahui kebutuhan tidur berdasarkan usia?",
+    "answer": "Mengetahui kebutuhan tidur berdasarkan usia membantu seseorang mendapatkan kualitas tidur yang baik dan menjaga kesehatan tubuh.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 10,
+    "category": "tidur",
+    "question": "Apa yang sebaiknya dilakukan untuk menjaga pola tidur yang sehat?",
+    "answer": "Hindari begadang jika tidak ada keperluan khusus dan disiplin menerapkan Perilaku Hidup Bersih dan Sehat (PHBS) dalam kehidupan sehari-hari.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 11,
+    "category": "tidur",
+    "question": "Kapan seseorang perlu memeriksakan diri ke fasilitas kesehatan terkait masalah tidur?",
+    "answer": "Seseorang sebaiknya segera memeriksakan diri ke fasilitas kesehatan terdekat apabila mengalami gejala penyakit akibat kurang tidur agar mendapatkan penanganan yang cepat dan tepat.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 12,
+    "category": "tidur",
+    "question": "Apa saja penyakit yang dapat dikaitkan dengan kurang tidur atau pola tidur yang buruk?",
+    "answer": "Kurang tidur atau pola tidur yang buruk dapat meningkatkan risiko stres, diabetes, dan penyakit jantung.",
+    "source": "Kemenkes RI"
+  },
+  {
+  "id": 13,
+  "category": "tidur",
+  "question": "Berapa lama waktu tidur yang dibutuhkan orang dewasa?",
+  "answer": "Secara umum, orang dewasa membutuhkan sekitar 7-9 jam tidur per hari untuk menjaga kesehatan dan kebugaran tubuh.",
+  "source": "Kemenkes RI"
+  },
+  {
+    "id": 14,
+    "category": "hidrasi",
+    "question": "Mengapa air penting bagi tubuh manusia?",
+    "answer": "Air merupakan komponen utama tubuh manusia dan berperan penting dalam berbagai fungsi tubuh. Air membantu menjaga kesehatan organ, mengangkut nutrisi, dan mendukung proses metabolisme.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 15,
+    "category": "hidrasi",
+    "question": "Mengapa air dianggap lebih penting daripada nutrisi lainnya bagi tubuh?",
+    "answer": "Manusia dapat bertahan lebih lama tanpa makanan dibandingkan tanpa air. Oleh karena itu, air sangat penting untuk mempertahankan kehidupan dan kesehatan tubuh.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 16,
+    "category": "hidrasi",
+    "question": "Berapa persen otak manusia terdiri dari air?",
+    "answer": "Sekitar 95% otak manusia tersusun atas air.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 17,
+    "category": "hidrasi",
+    "question": "Berapa persen kandungan air dalam darah manusia?",
+    "answer": "Sekitar 82% darah manusia terdiri dari air.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 18,
+    "category": "hidrasi",
+    "question": "Berapa persen kandungan air dalam jantung manusia?",
+    "answer": "Sekitar 75% jantung manusia terdiri dari air.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 19,
+    "category": "hidrasi",
+    "question": "Berapa persen kandungan air dalam paru-paru manusia?",
+    "answer": "Sekitar 86% paru-paru manusia terdiri dari air.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 20,
+    "category": "hidrasi",
+    "question": "Berapa persen kandungan air dalam ginjal manusia?",
+    "answer": "Sekitar 83% ginjal manusia terdiri dari air.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 21,
+    "category": "hidrasi",
+    "question": "Faktor apa saja yang memengaruhi kebutuhan cairan seseorang?",
+    "answer": "Kebutuhan cairan dipengaruhi oleh usia, jenis kelamin, tingkat aktivitas, faktor lingkungan, dan status gizi seseorang.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 22,
+    "category": "hidrasi",
+    "question": "Bagaimana tubuh kehilangan cairan setiap hari?",
+    "answer": "Tubuh kehilangan cairan melalui pernapasan, keringat, produksi urine, dan saat buang air besar.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 23,
+    "category": "hidrasi",
+    "question": "Mengapa cairan yang hilang dari tubuh perlu diganti?",
+    "answer": "Cairan yang hilang perlu diganti agar keseimbangan dan fungsi cairan tubuh tetap terjaga dengan baik.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 24,
+    "category": "hidrasi",
+    "question": "Apa manfaat air putih bagi aliran darah?",
+    "answer": "Air membantu melancarkan aliran darah yang membawa nutrisi ke seluruh sel tubuh.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 25,
+    "category": "hidrasi",
+    "question": "Bagaimana air membantu proses pembuangan racun dalam tubuh?",
+    "answer": "Air membantu organ-organ vital membuang racun dan zat sisa hasil metabolisme dari tubuh.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 26,
+    "category": "hidrasi",
+    "question": "Apa manfaat air bagi jaringan tubuh yang sensitif?",
+    "answer": "Air membantu melindungi jaringan tubuh yang sensitif serta menjaga kelembapan telinga, hidung, dan tenggorokan.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 27,
+    "category": "hidrasi",
+    "question": "Apa yang dimaksud dengan dehidrasi?",
+    "answer": "Dehidrasi adalah kondisi ketika tubuh tidak mendapatkan cukup air atau kehilangan cairan sekitar 2% atau lebih dari berat badan.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 28,
+    "category": "hidrasi",
+    "question": "Bagaimana dehidrasi dapat memengaruhi fungsi kognitif?",
+    "answer": "Dehidrasi dapat menyebabkan konsentrasi menurun, sulit fokus, dan mengganggu fungsi kognitif.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 29,
+    "category": "hidrasi",
+    "question": "Apa dampak dehidrasi ringan terhadap tubuh?",
+    "answer": "Dehidrasi ringan dengan kehilangan cairan sekitar 1-2% dapat mengganggu fungsi kognitif dan menurunkan kapasitas fisik.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 30,
+    "category": "hidrasi",
+    "question": "Mengapa dehidrasi dianggap berbahaya?",
+    "answer": "Dehidrasi dapat terjadi tanpa gejala yang signifikan dan pada kondisi berat dapat menyebabkan pingsan, koma, bahkan kematian.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 31,
+    "category": "hidrasi",
+    "question": "Bagaimana tubuh mengatur asupan air?",
+    "answer": "Asupan air diatur melalui rasa haus dan kenyang yang melibatkan mulut, hipotalamus di otak, dan lambung.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 32,
+    "category": "hidrasi",
+    "question": "Berapa banyak air putih yang dianjurkan untuk orang dewasa setiap hari?",
+    "answer": "Orang dewasa umumnya dianjurkan mengonsumsi sekitar 8 gelas air berukuran 230 ml per hari atau sekitar 2 liter.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 33,
+    "category": "hidrasi",
+    "question": "Apakah kebutuhan cairan hanya berasal dari minuman?",
+    "answer": "Tidak. Sekitar 20% kebutuhan cairan tubuh dapat diperoleh dari makanan.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 34,
+    "category": "hidrasi",
+    "question": "Makanan apa yang dapat membantu memenuhi kebutuhan cairan tubuh?",
+    "answer": "Buah dan sayuran yang kaya air, seperti semangka dan bayam, dapat membantu memenuhi kebutuhan cairan tubuh.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 35,
+    "category": "hidrasi",
+    "question": "Berapa kebutuhan cairan harian anak usia 7-9 tahun?",
+    "answer": "Menurut AKG Indonesia, anak usia 7-9 tahun direkomendasikan mengonsumsi sekitar 1.900 ml cairan per hari.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 36,
+    "category": "hidrasi",
+    "question": "Berapa kebutuhan cairan harian anak usia 10-12 tahun?",
+    "answer": " Menurut AKG Indonesia, anak usia 10-12 tahun direkomendasikan mengonsumsi sekitar 1.800 ml cairan per hari.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 37,
+    "category": "hidrasi",
+    "question": "Berapa kebutuhan cairan harian anak usia 4-8 tahun?",
+    "answer": "Menurut Institute of Medicine (IOM), anak usia 4-8 tahun direkomendasikan mengonsumsi sekitar 1.700 ml air per hari.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 38,
+    "category": "hidrasi",
+    "question": "Berapa kebutuhan cairan harian anak perempuan usia 9-13 tahun?",
+    "answer": "Menurut Institute of Medicine, anak perempuan usia 9-13 tahun direkomendasikan mengonsumsi sekitar 2.100 ml air per hari.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 39,
+    "category": "hidrasi",
+    "question": "Berapa kebutuhan cairan harian anak laki-laki usia 9-13 tahun?",
+    "answer": "Menurut Institute of Medicine (IOM), anak laki-laki usia 9-13 tahun direkomendasikan mengonsumsi sekitar 2.400 ml air per hari.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 40,
+    "category": "hidrasi",
+    "question": "Berapa konsumsi air putih yang dianjurkan untuk wanita usia 25-42 tahun ?",
+    "answer": "Suatu penelitian di Amerika menyatakan wanita usia 25-42 tahun dianjurkan mengonsumsi lebih dari 2 liter air per hari.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 41,
+    "category": "hidrasi",
+    "question": "Apakah kebutuhan air minum setiap orang sama?",
+    "answer": "Tidak. Kebutuhan air minum bervariasi pada setiap orang tergantung kondisi tubuh, aktivitas, lingkungan, usia, dan faktor lainnya.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 42,
+    "category": "hidrasi",
+    "question": "Mengapa anjuran minum 8 gelas air per hari sering digunakan?",
+    "answer": "Karena jumlah tersebut umumnya dapat memenuhi kebutuhan cairan kebanyakan orang dan mudah diingat oleh masyarakat.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 43,
+    "category": "hidrasi",
+    "question": "Apa cara sederhana untuk memastikan kebutuhan cairan tubuh terpenuhi?",
+    "answer": "Minumlah setiap kali merasa haus dan pastikan tubuh mendapatkan asupan cairan yang cukup sepanjang hari.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 44,
+    "category": "kafein",
+    "question": "Apa itu kafein?",
+    "answer": "Kafein adalah stimulan alami yang paling banyak dikonsumsi di seluruh dunia dan dapat membantu meningkatkan kewaspadaan serta mengurangi rasa kantuk.",
+    "source": "Alodokter"
+  },
+  {
+    "id": 45,
+    "category": "kafein",
+    "question": "Apa saja sumber kafein yang umum dikonsumsi?",
+    "answer": "Sumber kafein yang umum dikonsumsi antara lain kopi, teh, biji kakao, serta berbagai makanan, minuman, suplemen, dan obat-obatan yang mengandung kafein.",
+    "source": "Alodokter"
+  },
+  {
+    "id": 46,
+    "category": "kafein",
+    "question": "Mengapa konsumsi kafein berlebihan dapat menyebabkan sulit tidur?",
+    "answer": "Efek kafein dapat bertahan hingga malam hari sehingga mengganggu proses tidur, terutama jika dikonsumsi pada siang menjelang sore atau sore hari.",
+    "source": "Alodokter"
+  },
+  {
+    "id": 47,
+    "category": "kafein",
+    "question": "Apa dampak kurang tidur akibat konsumsi kafein berlebihan?",
+    "answer": "Kurang tidur dapat menurunkan kesiagaan dan kinerja pada keesokan harinya serta meningkatkan risiko berbagai penyakit dan gangguan metabolisme.",
+    "source": "Alodokter"
+  },
+  {
+    "id": 48,
+    "category": "kafein",
+    "question": "Bagaimana kafein dapat meningkatkan risiko osteoporosis?",
+    "answer": "Kafein dapat mengganggu penyerapan dan metabolisme kalsium dalam tubuh sehingga jika dikonsumsi berlebihan dalam jangka panjang dapat meningkatkan risiko osteoporosis.",
+    "source": "Alodokter"
+  },
+  {
+    "id": 49,
+    "category": "kafein",
+    "question": "Berapa banyak kalsium yang hilang setelah mengonsumsi 100 mg kafein?",
+    "answer": "Tubuh kehilangan sekitar 6 mg kalsium setiap kali mengonsumsi 100 mg kafein atau setara dengan satu cangkir kopi.",
+    "source": "Alodokter"
+  },
+  {
+    "id": 50,
+    "category": "kafein",
+    "question": "Mengapa konsumsi kafein berlebihan dapat menyebabkan kerutan pada wajah?",
+    "answer": "Kafein dapat meningkatkan pengeluaran cairan tubuh melalui urine sehingga kulit lebih rentan mengalami dehidrasi yang dapat memicu munculnya kerutan.",
+    "source": "Alodokter"
+  },
+  {
+    "id": 51,
+    "category": "kafein",
+    "question": "Apa yang sebaiknya dilakukan saat mengonsumsi minuman berkafein untuk mencegah dehidrasi?",
+    "answer": "Sebaiknya mengimbangi konsumsi minuman berkafein dengan minum air putih yang cukup untuk menjaga kecukupan cairan tubuh.",
+    "source": "Alodokter"
+  },
+  {
+    "id": 52,
+    "category": "kafein",
+    "question": "Bagaimana kafein memengaruhi jantung?",
+    "answer": "Kafein dapat meningkatkan tekanan darah dalam waktu singkat dan pada orang yang sensitif dapat menyebabkan denyut jantung tidak teratur atau jantung berdebar.",
+    "source": "Alodokter"
+  },
+  {
+    "id": 53,
+    "category": "kafein",
+    "question": "Mengapa konsumsi kafein berlebihan berisiko bagi penderita aritmia?",
+    "answer": "Pada penderita aritmia, konsumsi kafein berlebihan dapat membuat kerja jantung menjadi lebih berat dan dalam beberapa kasus dapat menimbulkan risiko yang serius.",
+    "source": "Alodokter"
+  },
+  {
+    "id": 54,
+    "category": "kafein",
+    "question": "Bagaimana kafein dapat menyebabkan masalah pencernaan?",
+    "answer": "Kafein dapat meningkatkan produksi asam lambung sehingga dapat memicu mulas atau sakit perut, terutama pada penderita asam lambung atau tukak lambung.",
+    "source": "Alodokter"
+  },
+  {
+    "id": 55,
+    "category": "kafein",
+    "question": "Siapa yang lebih rentan mengalami gangguan pencernaan akibat kafein?",
+    "answer": "Orang yang memiliki penyakit asam lambung atau tukak lambung lebih rentan mengalami gangguan pencernaan akibat konsumsi kafein.",
+    "source": "Alodokter"
+  },
+  {
+    "id": 56,
+    "category": "kafein",
+    "question": "Bagaimana konsumsi kafein berlebihan dapat memengaruhi kesuburan?",
+    "answer": "Beberapa penelitian menunjukkan bahwa konsumsi kafein dalam jumlah besar dapat mengganggu produksi hormon estrogen yang penting untuk proses kehamilan.",
+    "source": "Alodokter"
+  },
+  {
+    "id": 57,
+    "category": "kafein",
+    "question": "Apa risiko konsumsi kafein berlebihan selama kehamilan?",
+    "answer": "Konsumsi kafein berlebihan selama kehamilan dapat meningkatkan risiko keguguran dan menghambat pertumbuhan janin sehingga bayi dapat lahir dengan berat badan rendah.",
+    "source": "Alodokter"
+  },
+  {
+    "id": 58,
+    "category": "kafein",
+    "question": "Bagaimana kafein memengaruhi kadar gula darah pada penderita diabetes tipe 2?",
+    "answer": "Kafein dapat meningkatkan kadar gula darah karena diduga menurunkan proses penyerapan gula darah ke dalam sel tubuh.",
+    "source": "Alodokter"
+  },
+  {
+    "id": 59,
+    "category": "kafein",
+    "question": "Apa risiko konsumsi kafein berlebihan bagi penderita diabetes tipe 2?",
+    "answer": "Konsumsi kafein berlebihan dapat meningkatkan risiko komplikasi diabetes seperti neuropati diabetik dan penyakit jantung.",
+    "source": "Alodokter"
+  },
+  {
+    "id": 60,
+    "category": "kafein",
+    "question": "Bagaimana cara mengetahui jumlah kafein yang dikonsumsi setiap hari?",
+    "answer": "Anda dapat mencatat jumlah minuman atau produk berkafein yang dikonsumsi setiap hari, seperti jumlah cangkir kopi atau teh yang diminum.",
+    "source": "Alodokter"
+  },
+  {
+    "id": 61,
+    "category": "kafein",
+    "question": "Bagaimana cara mengurangi konsumsi kafein secara aman?",
+    "answer": "Kurangi konsumsi kafein secara bertahap, misalnya dengan mengurangi jumlah cangkir kopi yang diminum setiap hari.",
+    "source": "Alodokter"
+  },
+  {
+    "id": 62,
+    "category": "kafein",
+    "question": "Minuman apa yang dapat menjadi pengganti minuman berkafein?",
+    "answer": "Air mineral, infused water, serta kopi, teh, dan soda bebas kafein dapat menjadi alternatif pengganti minuman berkafein.",
+    "source": "Alodokter"
+  },
+  {
+    "id": 63,
+    "category": "kafein",
+    "question": "Kapan sebaiknya seseorang berhenti mengonsumsi kafein sebelum tidur?",
+    "answer": "Sebaiknya konsumsi kafein dibatasi setidaknya 6-7 jam sebelum waktu tidur untuk mengurangi risiko gangguan tidur.",
+    "source": "Alodokter"
+  },
+  {
+    "id": 64,
+    "category": "kafein",
+    "question": "Apa yang dapat membantu saat sedang mengurangi konsumsi kafein?",
+    "answer": "Beristirahat yang cukup dan berolahraga secara teratur dapat membantu meningkatkan energi saat mengurangi konsumsi kafein.",
+    "source": "Alodokter"
+  },
+  {
+    "id": 65,
+    "category": "kafein",
+    "question": "Kapan seseorang perlu berkonsultasi dengan dokter terkait konsumsi kafein?",
+    "answer": "Seseorang sebaiknya berkonsultasi dengan dokter jika mengalami kesulitan mengurangi konsumsi kafein atau ingin mengetahui batas aman konsumsi kafein sesuai kondisi kesehatannya.",
+    "source": "Alodokter"
+  },
+  {
+    "id": 66,
+    "category": "pola hidup sehat",
+    "question": "Apa yang dimaksud dengan pola hidup sehat?",
+    "answer": "Pola hidup sehat adalah serangkaian kebiasaan sehari-hari yang dilakukan secara konsisten untuk menjaga kesehatan tubuh dan mengurangi risiko berbagai penyakit.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 67,
+    "category": "pola hidup sehat",
+    "question": "Mengapa penting menerapkan pola hidup sehat?",
+    "answer": "Pola hidup sehat dapat membantu menjaga kesehatan tubuh, meningkatkan kualitas hidup, dan mencegah berbagai penyakit dalam jangka panjang.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 68,
+    "category": "pola hidup sehat",
+    "question": "Mengapa seseorang perlu mengetahui kondisi kesehatannya saat ini?",
+    "answer": "Mengetahui kondisi kesehatan membantu seseorang menentukan perubahan gaya hidup yang diperlukan sesuai dengan masalah kesehatan atau risiko penyakit yang dimiliki.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 69,
+    "category": "pola hidup sehat",
+    "question": "Mengapa pemeriksaan kesehatan rutin penting dilakukan?",
+    "answer": "Pemeriksaan kesehatan rutin membantu memantau kondisi tubuh dan memberikan kesempatan untuk berkonsultasi dengan dokter mengenai kesehatan.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 70,
+    "category": "pola hidup sehat",
+    "question": "Mengapa aktivitas fisik penting dalam pola hidup sehat?",
+    "answer": "Aktivitas fisik membantu menjaga kebugaran tubuh, meningkatkan kesehatan, dan mengurangi risiko berbagai penyakit.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 71,
+    "category": "pola hidup sehat",
+    "question": "Berapa durasi olahraga yang direkomendasikan setiap minggu?",
+    "answer": "Para pakar merekomendasikan olahraga dengan total durasi minimal 150 menit setiap minggu.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 72,
+    "category": "pola hidup sehat",
+    "question": "Seberapa sering latihan penguatan otot sebaiknya dilakukan?",
+    "answer": "Latihan untuk mengencangkan atau memperkuat otot dianjurkan dilakukan setidaknya dua hari dalam seminggu.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 73,
+    "category": "pola hidup sehat",
+    "question": "Apa contoh aktivitas fisik sederhana yang dapat dilakukan sehari-hari?",
+    "answer": "Salah satu contoh aktivitas fisik sederhana adalah berjalan kaki selama sekitar 10 menit sebelum makan siang.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 74,
+    "category": "pola hidup sehat",
+    "question": "Mengapa mencatat makanan yang dikonsumsi dapat membantu kesehatan?",
+    "answer": "Mencatat makanan dapat membantu menyadari pola makan yang kurang sehat dan menjadi pengingat untuk memperbaiki kebiasaan makan.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 75,
+    "category": "pola hidup sehat",
+    "question": "Berapa porsi buah dan sayur yang dianjurkan setiap hari?",
+    "answer": "Dianjurkan mengonsumsi setidaknya sembilan porsi buah dan sayur setiap hari sebagai bagian dari pola hidup sehat.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 76,
+    "category": "pola hidup sehat",
+    "question": "Bagaimana hubungan sosial dapat memengaruhi kesehatan?",
+    "answer": "Hubungan sosial yang baik dapat mendukung kesehatan mental, memberikan rasa nyaman, dan meningkatkan kebahagiaan.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 77,
+    "category": "pola hidup sehat",
+    "question": "Mengapa penting memiliki lingkungan sosial yang positif?",
+    "answer": "Lingkungan sosial yang positif dapat memberikan dukungan emosional, membuat seseorang merasa nyaman, dan membantu menjaga kesehatan mental.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 78,
+    "category": "pola hidup sehat",
+    "question": "Kebiasaan buruk apa yang sebaiknya dihentikan untuk menjaga kesehatan?",
+    "answer": "Kebiasaan seperti merokok dan mengonsumsi minuman beralkohol sebaiknya dihentikan karena dapat meningkatkan risiko berbagai penyakit.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 79,
+    "category": "pola hidup sehat",
+    "question": "Mengapa penting memilih makanan sehat?",
+    "answer": "Makanan sehat membantu memenuhi kebutuhan gizi tubuh dan mendukung kesehatan dalam jangka panjang.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 80,
+    "category": "pola hidup sehat",
+    "question": "Apa manfaat mengolah makanan sendiri di rumah?",
+    "answer": "Mengolah makanan sendiri dapat membantu menjaga kualitas, kebersihan, dan kesehatan makanan yang dikonsumsi.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 81,
+    "category": "pola hidup sehat",
+    "question": "Mengapa kebutuhan cairan harian harus dipenuhi?",
+    "answer": "Air membantu setiap bagian tubuh bekerja dengan baik serta dapat membantu mencegah batu ginjal dan konstipasi.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 82,
+    "category": "pola hidup sehat",
+    "question": "Berapa banyak air putih yang dianjurkan untuk diminum setiap hari?",
+    "answer": "Dianjurkan minum air putih sekitar 6-8 gelas per hari, kecuali terdapat kondisi medis tertentu yang membatasi asupan cairan.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 83,
+    "category": "pola hidup sehat",
+    "question": "Mengapa stres perlu dikelola dengan baik?",
+    "answer": "Stres yang tidak dikelola dapat berdampak negatif pada kesehatan fisik maupun mental.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 84,
+    "category": "pola hidup sehat",
+    "question": "Apa saja cara yang dapat dilakukan untuk mengelola stres?",
+    "answer": "Stres dapat dikelola dengan merencanakan aktivitas, meluangkan waktu untuk relaksasi, melakukan hobi, yoga, meditasi, atau menuliskan hal-hal yang disyukuri.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 85,
+    "category": "pola hidup sehat",
+    "question": "Mengapa istirahat yang cukup penting bagi kesehatan?",
+    "answer": "Istirahat yang cukup merupakan kunci untuk menjaga kesehatan tubuh dan pikiran.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 86,
+    "category": "pola hidup sehat",
+    "question": "Bagaimana cara menjaga kualitas tidur yang baik?",
+    "answer": "Membiasakan tidur dan bangun pada waktu yang sama setiap hari dapat membantu menjaga kualitas tidur.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 87,
+    "category": "pola hidup sehat",
+    "question": "Apa aktivitas yang dapat membantu tubuh lebih rileks sebelum tidur?",
+    "answer": "Mandi air hangat, membaca buku, atau mendengarkan musik dapat membantu tubuh lebih rileks sebelum tidur.",
+    "source": "Kemenkes RI"
+  },
+  {
+    "id": 88,
+    "category": "pola hidup sehat",
+    "question": "Apa manfaat jangka panjang dari menerapkan pola hidup sehat?",
+    "answer": "Menjadikan pola hidup sehat sebagai kebiasaan sehari-hari dapat memberikan manfaat jangka panjang bagi kesehatan dan membantu mencegah berbagai penyakit.",
+    "source": "Kemenkes RI"
+  }
+]
+
+
+
+
+

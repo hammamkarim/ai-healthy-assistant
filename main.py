@@ -5,6 +5,12 @@ print()
 from transformers import AutoTokenizer
 from transformers import AutoModelForCausalLM
 
+import json
+import numpy as np
+import faiss
+
+from sentence_transformers import SentenceTransformer
+
 from piper.voice import PiperVoice
 import wave
 
@@ -23,6 +29,65 @@ model = AutoModelForCausalLM.from_pretrained(
 
 print("\nModel LLM berhasil dimuat!")
 
+print("Memuat model embedding...")
+
+embedding_model = SentenceTransformer(
+    "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+)
+
+print("Model embedding berhasil dimuat!")
+
+with open(
+    "dataset/health_dataset.json",
+    "r",
+    encoding="utf-8"
+) as f:
+
+    dataset = json.load(f)
+
+print(
+    f"Dataset berhasil dimuat: {len(dataset)} data"
+)
+
+documents = []
+
+for item in dataset:
+
+    text = f"""
+Kategori: {item['category']}
+
+Pertanyaan:
+{item['question']}
+
+Jawaban:
+{item['answer']}
+"""
+
+    documents.append(text)
+    
+print("Membuat embedding dataset...")
+
+document_embeddings = embedding_model.encode(
+    documents,
+    convert_to_numpy=True
+)
+
+print("Embedding selesai dibuat!")
+
+dimension = document_embeddings.shape[1]
+
+index = faiss.IndexFlatL2(
+    dimension
+)
+
+index.add(
+    document_embeddings.astype("float32")
+)
+
+print(
+    f"FAISS index siap dengan {index.ntotal} data"
+)
+
 conversation_history = []
 MAX_HISTORY = 10
 
@@ -39,9 +104,47 @@ voice = PiperVoice.load(
 
 print("Model suara berhasil dimuat!")
 
+def search_context(query, top_k=3):
+
+    query_embedding = embedding_model.encode(
+        [query],
+        convert_to_numpy=True
+    )
+
+    distances, indices = index.search(
+        query_embedding.astype("float32"),
+        top_k
+    )
+
+    contexts = []
+    sources = []
+
+    for idx in indices[0]:
+
+        contexts.append(
+            documents[idx]
+        )
+
+        sources.append(
+            dataset[idx]["source"]
+        )
+
+    return "\n\n".join(contexts), sources
+
 def generate_health_advice(user_input, history):
+    
+    context, sources = search_context(
+        user_input
+    )
 
     prompt = f"""
+    
+Gunakan informasi berikut sebagai referensi utama.
+
+INFORMASI DATASET:
+
+{context}
+    
 Berikan saran kesehatan berdasarkan kondisi pengguna berikut.
 
 Fokuskan saran pada perbaikan pola hidup sehat pengguna dan sesuaikan dengan kondisi yang dialami.
@@ -149,7 +252,7 @@ Jawaban:
         if len(history) > MAX_HISTORY:
             del history[:-MAX_HISTORY]
 
-        return response
+        return response, sources
 
     except Exception as e:
 
@@ -210,10 +313,15 @@ if __name__ == "__main__":
             print("Input tidak boleh kosong!")
             continue
 
-        hasil = generate_health_advice(
+        hasil, sources = generate_health_advice(
             user_input,
             conversation_history
         )
+
+        print("\n=== REFERENSI DATASET (RAG) ===\n")
+
+        for i, source in enumerate(set(sources), start=1):
+            print(f"[{i}] {source}")
 
         print("\n=== HASIL AI ===\n")
         print(hasil)
