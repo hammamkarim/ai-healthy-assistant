@@ -8,7 +8,6 @@ from main import (
 )
 
 test_questions = [
-
     "Apa manfaat tidur cukup?",
     "Berapa kebutuhan air putih harian?",
     "Apa dampak kurang tidur?",
@@ -19,7 +18,6 @@ test_questions = [
     #"Bagaimana cara mengurangi konsumsi kafein?",
     #"Apa dampak dehidrasi?",
     #"Bagaimana menjaga kualitas tidur?"
-
 ]
 
 results = []
