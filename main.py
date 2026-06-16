@@ -10,6 +10,7 @@ import numpy as np
 import faiss
 
 from sentence_transformers import SentenceTransformer
+from sentence_transformers import util
 
 from piper.voice import PiperVoice
 import wave
@@ -131,6 +132,28 @@ def search_context(query, top_k=3):
 
     return "\n\n".join(contexts), sources
 
+def calculate_similarity(question, answer):
+
+    emb1 = embedding_model.encode(
+        question,
+        convert_to_tensor=True
+    )
+
+    emb2 = embedding_model.encode(
+        answer,
+        convert_to_tensor=True
+    )
+
+    score = util.cos_sim(
+        emb1,
+        emb2
+    )
+
+    return round(
+        score.item(),
+        4
+    )
+
 def generate_health_advice(user_input, history):
     
     context, sources = search_context(
@@ -222,7 +245,7 @@ Jawaban:
 
         outputs = model.generate(
             **inputs,
-            max_new_tokens=300,
+            max_new_tokens=250,
             temperature=0.7,
             do_sample=True,
             repetition_penalty=1.2,
