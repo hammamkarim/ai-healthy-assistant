@@ -9,3 +9,4 @@ sentencepiece
 safetensors
 piper-tts
 soundfile
+pandas
