@@ -1,0 +1,49 @@
+﻿Question,Generated Answer,Audio File,RAG Source,Similarity,Latency (s),Relevance (1-5),Coherence (1-5),Fluency (1-5),Naturalness Audio (1-5),Intelligibility Audio (1-5),Audio Generation Time (s),Error Analysis
+Apa manfaat tidur cukup?,"Tidur yang cukup memiliki beberapa manfaat untuk kesehatan. 
+
+1. Tidur menciptakan energi dan meningkatkan kemampuan fungsional dalam melakukan aktivitas harian.
+   
+2. Mempercepat proses pemulihan fisik dan mental, sehingga membuatmu lebih segar dan siap meraih tujuan-tujuan baru.
+
+3. Mengurangi resiko terkena masalah kesehatan kronis seperti tekanan darah tinggi, kolesterol jahat, hiperlipemia, serta penyakit jantung dan stroke.
+
+4. Melancarkan ritme biologis tubuh dan membangkitkan hormon produksi.
+
+5. Menyediakan ruang kosong untuk perkembangan otak dan pembentukan memory baru.
+
+6. Memberikan kesempatan kepada sistem imunitas untuk bekerja efektif melawan infeksi dan virus.
+
+7. Dapat juga membantu memperlambat progresus keriput dan fleksibilitas kulit.
+
+8. Meningkatkan mood dan daya ingat.
+
+9. Kurangi rasa cemas dan stres.
+
+",outputs/audio/output_1781582378.wav,Kemenkes RI,0.6752,93.95,,,,,,2.55,
+Berapa kebutuhan air putih harian?,"Mengenai kebutuhan air putih harian, tergantung pada faktor-faktor seperti jenis kelamin, tinggi badan, aktivitas fisik, dan suhu lingkungan. Untuk generalisasi, kita bisa fokus pada rekomendasi rata-rata yang telah disampaikan sebelumnya. 
+
+1. Orang Dewasa Umumnya Direncanakan Mengkonsumsi Sekitar 2 Liter Air Per Hari: Ini mencerminkan rekomendasi bahwa mereka mendapatkan cukup jumlah air untuk memenuhi keperluan normal mereka dalam satu hari. Namun, ini juga harus ditentukan oleh individu sendiri berdasarkan suasana hatinya dan efeknya pada tubuh.
+
+2. Anak Usia Dari Tahun Keempat Sampai Delapan Bulanan Memerlukan Kebutuhan Cairan Lebih Tinggi: Menurut IOM, anak-anak usia 4 sampai delapan tahun membutuhkan hingga 1,7 litar air per hari, sehingga penting bagi para orang tua untuk memastikan anak-anak Anda selalu bersedia minum",outputs/audio/output_1781582475.wav,Kemenkes RI,0.8382,94.03,,,,,,2.08,
+Apa dampak kurang tidur?,"Maaf, saya hanya dapat membantu pertanyaan yang berkaitan dengan kesehatan dan pola hidup sehat.",outputs/audio/output_1781582541.wav,"Kemenkes RI, Alodokter",0.3079,64.31,,,,,,0.35,
+Bagaimana cara menjaga hidrasi tubuh?,"1. Konsumsilah banyak air putih selama seharian. Cobalah minum secarik gelas minimal satu sampai dua liter air dalam sehari.
+   
+2. Perbanyak konsumsi buah-buahan dan sayuran yang tinggi akan vitamin C karena mereka juga bisa meningkatkan imunitas tubuhmu.
+  
+3. Hindari alkohol dan teh hitam panas, dikarenakan kedua hal ini sering membuat kulit menjadi lebih kering dan bisa memicu dehidrasi.
+
+4. Pastikan untuk selalu minum air ketika melakukan aktivitas fisik intens seperti jogging atau berenang. Ini penting demi menciptakan rasio antara ekspektansi cairan dan pencampuran dengan udara hangat.
+
+5. Ingatlah bahwa gejalanya bisa sangat variatif, mulai dari sensasi lembab hingga sakit kepala, demam, atau mata tebal. Jika gejala semakin parah, minta bantuan dokter.
+
+6. Lakukan self-check-up rutin. Tanyakan dirimu sendiri apakah sudah cukup cairan? Apa saja re",outputs/audio/output_1781582652.wav,"Kemenkes RI, Alodokter",0.5302,110.06,,,,,,2.27,
+Apakah minum kopi berlebihan berbahaya?,"Ya, minum kopi berlebihan bisa memiliki efek negatif tergantung pada kondisi kesehatanmu. Mari kita diskusikan hal-hal penting tentang itu:
+
+1. Untuk Penderita Aritmia: Konsumsi kopi berlebihan bisa meningkatkan tekanan jantung dan frekuensinya, yang merupakan isu besar untuk mereka yang sudah memiliki masalah ini. 
+
+2. Kerutan Wajah: Kafein juga bisa melemahkan pembuluh darah kecil di kulit, yang kemudian merangsang produksi sel-silinder kolagen dan elastin, faktor respon normal terhadap dehidrasi. Ini bisa menyebabkan timbunan lemak di kulit dan membuat area tertentu tampak lebih tua cepat.
+
+3. Kurang Tidur: Dalam jumlah banyak, kafein bisa mempengaruhi kualitas tidur malam. Itu bisa mengganggu siklus tidur Anda dan membuat kamu sulit bangun pagi setelahnya.
+
+Saran:
+1. Cobalah untuk mengontrol jumlah kopi yang dikonsum",outputs/audio/output_1781582755.wav,Alodokter,0.8349,100.92,,,,,,1.88,

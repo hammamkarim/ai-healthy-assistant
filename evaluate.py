@@ -91,6 +91,10 @@ for question in test_questions:
         "Coherence (1-5)": "",
 
         "Fluency (1-5)": "",
+        
+        "Diversity (1-5)": "",
+
+        "Hallucination Analysis": "",
 
         "Naturalness Audio (1-5)": "",
 

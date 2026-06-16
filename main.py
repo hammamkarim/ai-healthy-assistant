@@ -92,6 +92,8 @@ print(
 conversation_history = []
 MAX_HISTORY = 10
 
+user_profile = {}
+
 print("Memuat model suara Piper...")
 # print(os.path.exists("models/piper/id_ID-news_tts-medium.onnx"))
 # print(os.path.exists("models/piper/id_ID-news_tts-medium.onnx.json"))
@@ -104,6 +106,47 @@ voice = PiperVoice.load(
 # print(dir(voice))
 
 print("Model suara berhasil dimuat!")
+
+def create_user_profile():
+
+    print("\n=== HEALTHY PROFILE ===")
+
+    gender = input(
+        "Jenis Kelamin (Laki-laki/Perempuan): "
+    )
+
+    age = input(
+        "Umur: "
+    )
+
+    weight = input(
+        "Berat Badan (kg): "
+    )
+
+    height = input(
+        "Tinggi Badan (cm): "
+    )
+
+    activity = input(
+        "Aktivitas Harian (rendah/sedang/tinggi): "
+    )
+
+    goal = input(
+        "Tujuan Kesehatan: "
+    )
+
+    profile = {
+
+        "gender": gender,
+        "age": age,
+        "weight": weight,
+        "height": height,
+        "activity": activity,
+        "goal": goal
+
+    }
+
+    return profile
 
 def search_context(query, top_k=3):
 
@@ -154,15 +197,41 @@ def calculate_similarity(question, answer):
         4
     )
 
-def generate_health_advice(user_input, history):
+def generate_health_advice(user_input, history, profile):
     
     context, sources = search_context(
         user_input
     )
+    
+    profile_context = f"""
+PROFIL PENGGUNA
+
+Jenis Kelamin:
+{profile['gender']}
+
+Umur:
+{profile['age']} tahun
+
+Berat Badan:
+{profile['weight']} kg
+
+Tinggi Badan:
+{profile['height']} cm
+
+Aktivitas Harian:
+{profile['activity']}
+
+Tujuan Kesehatan:
+{profile['goal']}
+"""
 
     prompt = f"""
     
 Gunakan informasi berikut sebagai referensi utama.
+
+PROFIL PENGGUNA:
+
+{profile_context}
 
 INFORMASI DATASET:
 
@@ -245,7 +314,7 @@ Jawaban:
 
         outputs = model.generate(
             **inputs,
-            max_new_tokens=250,
+            max_new_tokens=300,
             temperature=0.7,
             do_sample=True,
             repetition_penalty=1.2,
@@ -316,6 +385,42 @@ if __name__ == "__main__":
     print("AI akan mengingat percakapan sebelumnya.")
     print("Ketik 'reset' untuk memulai percakapan baru.")
     print("Ketik 'keluar' untuk menutup aplikasi.")
+    
+    user_profile = create_user_profile()
+    
+    print("\n=====================================")
+    print("Profil berhasil disimpan.")
+    print("=====================================")
+
+    print("\n=== RINGKASAN PROFIL ===")
+
+    print(
+        f"Jenis Kelamin : {user_profile['gender']}"
+    )
+
+    print(
+        f"Umur          : {user_profile['age']} tahun"
+    )
+
+    print(
+        f"Berat Badan   : {user_profile['weight']} kg"
+    )
+
+    print(
+        f"Tinggi Badan  : {user_profile['height']} cm"
+    )
+
+    print(
+        f"Aktivitas     : {user_profile['activity']}"
+    )
+
+    print(
+        f"Tujuan        : {user_profile['goal']}"
+    )
+
+    print("\n=====================================")
+    print("=== KONSULTASI KESEHATAN ===")
+    print("=====================================")
 
     while True:
 
@@ -338,7 +443,8 @@ if __name__ == "__main__":
 
         hasil, sources = generate_health_advice(
             user_input,
-            conversation_history
+            conversation_history,
+            user_profile
         )
 
         print("\n=== REFERENSI DATASET (RAG) ===\n")
