@@ -22,6 +22,17 @@ test_questions = [
 
 results = []
 
+test_profile = {
+
+    "gender": "Laki-laki",
+    "age": "21",
+    "weight": "71",
+    "height": "165",
+    "activity": "sedang",
+    "goal": "Menjaga kesehatan dan meningkatkan kebugaran"
+
+}
+
 for question in test_questions:
 
     history = []
@@ -34,7 +45,8 @@ for question in test_questions:
 
     answer, sources = generate_health_advice(
         question,
-        history
+        history,
+        test_profile
     )
 
     latency = round(
@@ -73,6 +85,15 @@ for question in test_questions:
     results.append({
 
         "Question": question,
+        
+        "User Profile": (
+            f"{test_profile['gender']}, "
+            f"{test_profile['age']} tahun, "
+            f"{test_profile['weight']} kg, "
+            f"{test_profile['height']} cm, "
+            f"{test_profile['activity']}, "
+            f"Tujuan: {test_profile['goal']}"
+        ),
 
         "Generated Answer": answer,
         

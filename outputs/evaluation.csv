@@ -1,49 +1,57 @@
-﻿Question,Generated Answer,Audio File,RAG Source,Similarity,Latency (s),Relevance (1-5),Coherence (1-5),Fluency (1-5),Naturalness Audio (1-5),Intelligibility Audio (1-5),Audio Generation Time (s),Error Analysis
-Apa manfaat tidur cukup?,"Tidur yang cukup memiliki beberapa manfaat untuk kesehatan. 
+﻿Question,User Profile,Generated Answer,Audio File,RAG Source,Similarity,Latency (s),Relevance (1-5),Coherence (1-5),Fluency (1-5),Diversity (1-5),Hallucination Analysis,Naturalness Audio (1-5),Intelligibility Audio (1-5),Audio Generation Time (s),Error Analysis
+Apa manfaat tidur cukup?,"Laki-laki, 21 tahun, 71 kg, 165 cm, sedang, Tujuan: Menjaga kesehatan dan meningkatkan kebugaran","Tidur yang cukup memiliki banyak manfaat untuk kesehatan. 
 
-1. Tidur menciptakan energi dan meningkatkan kemampuan fungsional dalam melakukan aktivitas harian.
+1. Tidur yang cukup bisa membantu organ dalam tubuh bekerja lebih efektif, termasuk sistem imun, metabolisme, dan hormon.
    
-2. Mempercepat proses pemulihan fisik dan mental, sehingga membuatmu lebih segar dan siap meraih tujuan-tujuan baru.
+2. Menghindari tidur terlalu kurang juga dapat mengurangi resiko stres tinggi dan tekanan psikologis lainnya, yang bisa merusak kesejahteraan fisik serta emosionalmu.
 
-3. Mengurangi resiko terkena masalah kesehatan kronis seperti tekanan darah tinggi, kolesterol jahat, hiperlipemia, serta penyakit jantung dan stroke.
+3. Dengan tidur yang cukup, kamu akan merasa segar dan energik selagi aktif seharian ini, membuat aktivitas harian menjadi lebih produktif.
 
-4. Melancarkan ritme biologis tubuh dan membangkitkan hormon produksi.
+Anjurannya adalah mencoba untuk tidur antara 7 hingga 9 jam tiap malam bergantung pada usiamu agar mendapat manfaat optimal dari tidur. Selain itu, cobalah untuk tidur dan bangun pada waktu yang sama setiap hari. Jika masih ada masalah saat tidur, cek apakah ada hal-hal tertentu yang mengganggumu. Untuk situasi lanjutan, sangat disarankan untuk berkonsultasi langsung dengan dokter atau ahli bedah saraf profesional.",outputs/audio/output_1781612396.wav,Kemenkes RI,0.8196,84.56,,,,,,,,2.53,
+Berapa kebutuhan air putih harian?,"Laki-laki, 21 tahun, 71 kg, 165 cm, sedang, Tujuan: Menjaga kesehatan dan meningkatkan kebugaran","Mau tahu kebutuhan air putih harianmu? 
 
-5. Menyediakan ruang kosong untuk perkembangan otak dan pembentukan memory baru.
+1. Untuk orang dewasa seperti dirimu, biasanya disarankan mengonsumsi sekitar 2 liter atau 8 gelas air putih dalam sehari. Ini bisa mencakup minuman lain juga, selain air putih.
 
-6. Memberikan kesempatan kepada sistem imunitas untuk bekerja efektif melawan infeksi dan virus.
+2. Pastikan kamu tetap terhidrasi baik sehingga tubuh mendapatkan oksigen dan nutrien yang dibutuhkan.
 
-7. Dapat juga membantu memperlambat progresus keriput dan fleksibilitas kulit.
+3. Jika cuaca panas atau aktivitas fisik intens, kamu mungkin butuh jumlah air lebih besar.
 
-8. Meningkatkan mood dan daya ingat.
+4. Selalu ingat, ini hanyalah rekomendasi dasarnya. Cek lagi apa saja kebutuhan khususmu.
 
-9. Kurangi rasa cemas dan stres.
+Anjuran Umum:
+Pastikan kamu sering-sering diminum air putih agar tetap lembab dan segar!
 
-",outputs/audio/output_1781582378.wav,Kemenkes RI,0.6752,93.95,,,,,,2.55,
-Berapa kebutuhan air putih harian?,"Mengenai kebutuhan air putih harian, tergantung pada faktor-faktor seperti jenis kelamin, tinggi badan, aktivitas fisik, dan suhu lingkungan. Untuk generalisasi, kita bisa fokus pada rekomendasi rata-rata yang telah disampaikan sebelumnya. 
+Saran Berkonsultasi Ke Tenaga Medis:
+Bila kamu merasa haus ekstra atau memiliki masalah kesehatan tertentu, minta nasihat kepada dokter atau ahli kesehatan profesional mu.",outputs/audio/output_1781612494.wav,Kemenkes RI,0.7329,95.97,,,,,,,,2.23,
+Apa dampak kurang tidur?,"Laki-laki, 21 tahun, 71 kg, 165 cm, sedang, Tujuan: Menjaga kesehatan dan meningkatkan kebugaran","Kurang tidur bisa membuatmu merasa lelah dan tidak fokus. Ini juga bisa meningkatkan resiko sakit maag, tekanan darah tinggi, dan masalah emosional seperti mood yang naik turun. 
 
-1. Orang Dewasa Umumnya Direncanakan Mengkonsumsi Sekitar 2 Liter Air Per Hari: Ini mencerminkan rekomendasi bahwa mereka mendapatkan cukup jumlah air untuk memenuhi keperluan normal mereka dalam satu hari. Namun, ini juga harus ditentukan oleh individu sendiri berdasarkan suasana hatinya dan efeknya pada tubuh.
+1. Coba letih diri lebih awal setiap malam untuk mendapatkan waktu tidur minimal 8 jam semalam.
+2. Hindari makan-makanan manis, alkohol, dan minuman bersoda beberapajam sebelum tidur.
+3. Lakukan aktivitas fisik sekitar dua puluh lima sampai sepuluh belas menit sehari agar tubuh tetap fit.
+4. Pastikan ruangan tempat tidurnya nyaman, dingin, dan tanpa cahaya biru dari gadget.
 
-2. Anak Usia Dari Tahun Keempat Sampai Delapan Bulanan Memerlukan Kebutuhan Cairan Lebih Tinggi: Menurut IOM, anak-anak usia 4 sampai delapan tahun membutuhkan hingga 1,7 litar air per hari, sehingga penting bagi para orang tua untuk memastikan anak-anak Anda selalu bersedia minum",outputs/audio/output_1781582475.wav,Kemenkes RI,0.8382,94.03,,,,,,2.08,
-Apa dampak kurang tidur?,"Maaf, saya hanya dapat membantu pertanyaan yang berkaitan dengan kesehatan dan pola hidup sehat.",outputs/audio/output_1781582541.wav,"Kemenkes RI, Alodokter",0.3079,64.31,,,,,,0.35,
-Bagaimana cara menjaga hidrasi tubuh?,"1. Konsumsilah banyak air putih selama seharian. Cobalah minum secarik gelas minimal satu sampai dua liter air dalam sehari.
+Anjurannya, pastikan untuk cukup tidur demi kesehatanmu. Jika masih ada kendala, minta tolong kepada dokter.",outputs/audio/output_1781612591.wav,"Kemenkes RI, Alodokter",0.756,93.79,,,,,,,,1.79,
+Bagaimana cara menjaga hidrasi tubuh?,"Laki-laki, 21 tahun, 71 kg, 165 cm, sedang, Tujuan: Menjaga kesehatan dan meningkatkan kebugaran","Baiklah. Untuk menjaga kebutuhan hidrasi tubuhmu, ikuti petunjuk-petunjuk ini:
+
+1. Minumlah air segar selalu. Cobalah untuk minum sekitar 8 gelas air panas dalam satu hari, namun jumlah bisa sedikit lebih banyak bergantung pada aktivitas fisik dan cuaca.
+
+2. Hindari minuman bersoda dan teh hitam yang tinggi kafein karena mereka bisa membuat tubuh cepat haus. Kalau ingin minumannya manis, tambahkan jus buahan alami saja.
+
+3. Pastikan juga bahwa semua jenis suplemen dan vitamin yang dikonsumsiku sudah mencakup elemen-elemen penting seperti zat besi dan potasium yang diperlukan oleh organisme kita.
+
+4. Perhatikan rasa haus. Sebelum merasa sangat haus, cobalah untuk sering-sering diminum air. 
+
+Saat dirimu merasa lemas atau rewel tanpa ada kerusakan fisik yang tampak, hal itu bisa menjadi indikator bahwa tubuh butuh lebih banyak air. Selain itu, hindari konsumsi alkohol dan tembakau, ya!
+
+Ingat, semakin tua usia, maka keperluan akan air juga bertambah. Tapi ingat, narkoba dan alkohol sama sekali harus dicegah! Banyak bic",outputs/audio/output_1781612702.wav,"Kemenkes RI, Alodokter",0.6906,109.14,,,,,,,,2.46,
+Apakah minum kopi berlebihan berbahaya?,"Laki-laki, 21 tahun, 71 kg, 165 cm, sedang, Tujuan: Menjaga kesehatan dan meningkatkan kebugaran","Ya, minum kopi berlebihan bisa berbahaya. Konsumsi kafein berlebihan dapat memiliki efek negatif seperti hal-hal ini:
+
+1. Menyebabkan masalah tidur malam karena rasa lapar atau ketegangan.
    
-2. Perbanyak konsumsi buah-buahan dan sayuran yang tinggi akan vitamin C karena mereka juga bisa meningkatkan imunitas tubuhmu.
-  
-3. Hindari alkohol dan teh hitam panas, dikarenakan kedua hal ini sering membuat kulit menjadi lebih kering dan bisa memicu dehidrasi.
+2. Dapat juga merangsang sistem saraf pusat hingga waktu tidur pagi terganggu.
 
-4. Pastikan untuk selalu minum air ketika melakukan aktivitas fisik intens seperti jogging atau berenang. Ini penting demi menciptakan rasio antara ekspektansi cairan dan pencampuran dengan udara hangat.
+3. Bisa menyebabkan hipertensi atau tekanan darah tinggi untuk mereka yang sudah ada riwayat.
 
-5. Ingatlah bahwa gejalanya bisa sangat variatif, mulai dari sensasi lembab hingga sakit kepala, demam, atau mata tebal. Jika gejala semakin parah, minta bantuan dokter.
+Dengan demikian, sangat penting untuk mengontrol jumlah kopi yang diminum setiap hari agar tetap seimbang dengan gaya hidupmu. 
 
-6. Lakukan self-check-up rutin. Tanyakan dirimu sendiri apakah sudah cukup cairan? Apa saja re",outputs/audio/output_1781582652.wav,"Kemenkes RI, Alodokter",0.5302,110.06,,,,,,2.27,
-Apakah minum kopi berlebihan berbahaya?,"Ya, minum kopi berlebihan bisa memiliki efek negatif tergantung pada kondisi kesehatanmu. Mari kita diskusikan hal-hal penting tentang itu:
-
-1. Untuk Penderita Aritmia: Konsumsi kopi berlebihan bisa meningkatkan tekanan jantung dan frekuensinya, yang merupakan isu besar untuk mereka yang sudah memiliki masalah ini. 
-
-2. Kerutan Wajah: Kafein juga bisa melemahkan pembuluh darah kecil di kulit, yang kemudian merangsang produksi sel-silinder kolagen dan elastin, faktor respon normal terhadap dehidrasi. Ini bisa menyebabkan timbunan lemak di kulit dan membuat area tertentu tampak lebih tua cepat.
-
-3. Kurang Tidur: Dalam jumlah banyak, kafein bisa mempengaruhi kualitas tidur malam. Itu bisa mengganggu siklus tidur Anda dan membuat kamu sulit bangun pagi setelahnya.
-
-Saran:
-1. Cobalah untuk mengontrol jumlah kopi yang dikonsum",outputs/audio/output_1781582755.wav,Alodokter,0.8349,100.92,,,,,,1.88,
+Anjuranku adalah untuk mencoba reduksi sedikit demi sedikit dari jumlah kopi yang biasa dikonsumsi. Ingatlah bahwa istirahat cukup dan diet seimbang juga harus diperhitungkan untuk mendukung kesehatan fisik dan emosionalmu. Jika masih dirasai adanya gejala buruk, baiknya berkonsultasilah kepada dokter.",outputs/audio/output_1781612801.wav,Alodokter,0.8746,97.33,,,,,,,,1.85,
