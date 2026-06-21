@@ -1,7 +1,8 @@
-# AI HEALTHY ASSISTANT 
+# AI HEALTHY ASSISTANT
 # UAS Gen AI
 import streamlit as st
 import os
+
 from main import generate_health_advice, text_to_audio
 
 # CONFIG
@@ -100,13 +101,39 @@ section[data-testid="stSidebar"] {{
 """, unsafe_allow_html=True)
 
 
-# NAVIGATION
+# =========================================================
+# SESSION STATE INIT
+# (akar dari banyak error sebelumnya: variabel ini dipakai
+# di kode lama tapi tidak pernah di-set default-nya)
+# =========================================================
+
 if "page" not in st.session_state:
-    st.session_state.page = "Beranda"
+    st.session_state.page = "Dashboard"
+
+if "chat" not in st.session_state:
+    # list of tuple: ("user", text) atau ("ai", text, audio_path)
+    st.session_state.chat = []
+
+if "chat_history" not in st.session_state:
+    # list of dict {"role": ..., "content": ...} -> memory utk LLM
+    # ini PERSIS format yang dipakai parameter `history` di
+    # generate_health_advice() pada main.py asli
+    st.session_state.chat_history = []
+
+if "profile" not in st.session_state:
+    st.session_state.profile = None
+
 
 def go(page):
     st.session_state.page = page
     st.rerun()
+
+
+def profile_is_complete(profile):
+    if not profile:
+        return False
+    required = ["gender", "age", "weight", "height", "activity", "goal"]
+    return all(str(profile.get(k, "")).strip() != "" for k in required)
 
 
 # SIDEBAR
@@ -114,151 +141,177 @@ st.sidebar.image(img("logo.png"), width=100)
 st.sidebar.markdown("## AI Healthy Assistant")
 st.sidebar.markdown("---")
 
-if st.sidebar.button("🏠 Beranda"):
-    go("Beranda")
+if st.sidebar.button("🏠 Dashboard"):
+    go("Dashboard")
+
+if st.sidebar.button("👤 Profil"):
+    go("Profil")
 
 if st.sidebar.button("💬 Konsultasi"):
     go("Konsultasi")
+
+if st.sidebar.button("📊 Insight"):
+    go("Insight")
 
 st.sidebar.markdown("---")
 st.sidebar.caption("Asisten kesehatan berbasis AI")
 
 
-# BERANDA
-if st.session_state.page == "Beranda":
+# =========================================================
+# DASHBOARD
+# =========================================================
+if st.session_state.page == "Dashboard":
 
-    # HERO
-    st.markdown(f"""
-    <div class="hero">
-        <h1><span style="color:black;">AI Healthy </span><span style="color:#2E7D66;">Assistant</span></h1>
-        <p>Asisten pintar untuk membantu pola hidup sehat kamu</p>
+    st.markdown("""
+    <div style="
+        text-align:center;
+        padding:50px 20px;
+    ">
+        <h1>
+            AI Healthy Assistant
+        </h1>
+
+        <p style="
+            color:#64748B;
+            font-size:18px;
+        ">
+            Asisten kesehatan berbasis AI yang memberikan
+            rekomendasi personal berdasarkan kondisi kamu.
+        </p>
     </div>
     """, unsafe_allow_html=True)
 
-    st.markdown("<br>", unsafe_allow_html=True)
+    c1, c2, c3 = st.columns(3)
 
-    # BUTTON
-    col1, col2, col3 = st.columns([2.2,2,1])
+    with c1:
+        st.metric("AI Recommendation", "Aktif")
 
-    with col2:
-        st.markdown("<div style='display:flex; justify-content:center;'>", unsafe_allow_html=True)
-        
-        if st.button("Mulai Konsultasi"):
-            go("Konsultasi")
-        
-        st.markdown("</div>", unsafe_allow_html=True)
+    with c2:
+        st.metric("Voice Assistant", "Aktif")
 
-    st.markdown("<br><br>", unsafe_allow_html=True)
+    with c3:
+        st.metric("Personal Health", "Aktif")
 
-    # FEATURES
+    st.divider()
+
     col1, col2, col3 = st.columns(3)
 
     with col1:
-        with st.container(border=True):
-            st.image(img("chat.png"), width=80)
-            st.markdown("### Chat dengan AI")
-            st.write("Tanyakan kondisi kesehatan kamu secara langsung")
+        st.info("💡 Rekomendasi kesehatan personal")
 
     with col2:
-        with st.container(border=True):
-            st.image(img("heart.png"), width=80)
-            st.markdown("### Rekomendasi Sehat")
-            st.write("Saran pola hidup sehat yang relevan")
+        st.info("🧠 AI mengingat riwayat konsultasi")
 
     with col3:
-        with st.container(border=True):
-            st.image(img("audio.png"), width=80)
-            st.markdown("### Audio Penjelasan")
-            st.write("Dengarkan hasil rekomendasi dalam bentuk suara")
+        st.info("🔊 Hasil dapat didengarkan")
 
 
-# KONSULTASI (UI Halaman 2)
+# =========================================================
+# PROFIL
+# =========================================================
+elif st.session_state.page == "Profil":
+
+    st.title("👤 Profil Kesehatan")
+
+    existing = st.session_state.profile or {}
+
+    nama = st.text_input("Nama", value=existing.get("nama", ""))
+
+    gender = st.selectbox(
+        "Jenis Kelamin",
+        ["Laki-laki", "Perempuan"],
+        index=["Laki-laki", "Perempuan"].index(existing["gender"]) if existing.get("gender") in ["Laki-laki", "Perempuan"] else 0
+    )
+
+    umur = st.number_input(
+        "Umur",
+        min_value=1,
+        max_value=100,
+        value=int(existing.get("age", 1)) if str(existing.get("age", "")).isdigit() else 1
+    )
+
+    berat = st.number_input(
+        "Berat Badan (kg)",
+        min_value=1,
+        value=int(existing.get("weight", 1)) if str(existing.get("weight", "")).isdigit() else 1
+    )
+
+    tinggi = st.number_input(
+        "Tinggi Badan (cm)",
+        min_value=1,
+        value=int(existing.get("height", 1)) if str(existing.get("height", "")).isdigit() else 1
+    )
+
+    aktivitas = st.selectbox(
+        "Aktivitas Harian",
+        ["Rendah", "Sedang", "Tinggi"],
+        index=["Rendah", "Sedang", "Tinggi"].index(existing["activity"]) if existing.get("activity") in ["Rendah", "Sedang", "Tinggi"] else 0
+    )
+
+    tujuan = st.text_area("Tujuan Kesehatan", value=existing.get("goal", ""))
+
+    if st.button("Simpan Profil"):
+
+        if not nama.strip() or not tujuan.strip():
+            st.warning("Mohon lengkapi nama dan tujuan kesehatan terlebih dahulu.")
+        else:
+            # Catatan: main.py asli memakai profile['gender'], profile['age'], dst
+            # sebagai bagian dari f-string (tidak perlu tipe data spesifik),
+            # jadi int dari number_input tetap aman dipakai langsung.
+            st.session_state.profile = {
+                "nama": nama,
+                "gender": gender,
+                "age": umur,
+                "weight": berat,
+                "height": tinggi,
+                "activity": aktivitas,
+                "goal": tujuan
+            }
+
+            st.success("Profil berhasil disimpan")
+
+    if tinggi:
+        bmi = berat / ((tinggi / 100) ** 2)
+        st.metric("BMI", f"{bmi:.1f}")
+
+
+# =========================================================
+# KONSULTASI
+# =========================================================
 elif st.session_state.page == "Konsultasi":
 
-    st.markdown("## 💬 Konsultasi Kesehatan")
-    st.markdown("<br>", unsafe_allow_html=True)
+    st.title("💬 Konsultasi Kesehatan")
 
-    # INIT
-    if "chat" not in st.session_state:
-        st.session_state.chat = []
+    if not profile_is_complete(st.session_state.profile):
+        st.warning("Profil kamu belum lengkap. Silakan isi profil terlebih dahulu sebelum memulai konsultasi.")
+        if st.button("Isi Profil Sekarang"):
+            go("Profil")
+        st.stop()
 
-    if "input_text" not in st.session_state:
-        st.session_state.input_text = ""
-
-    # CHAT AREA
-    with st.container():
-        for role, text in st.session_state.chat:
-
+    # Tampilkan riwayat chat
+    if not st.session_state.chat:
+        st.markdown("""
+        <div style="
+            text-align:center;
+            margin-top:20px;
+            margin-bottom:40px;
+            color:#94A3B8;
+            font-size:16px;
+        ">
+            💬 Belum ada percakapan<br>
+            Mulai dengan mengetik keluhan kamu di bawah
+        </div>
+        """, unsafe_allow_html=True)
+    else:
+        for entry in st.session_state.chat:
+            role, text = entry[0], entry[1]
             if role == "user":
-                st.markdown(f"""
-                <div style="
-                    display:flex;
-                    justify-content:flex-end;
-                    margin-bottom:12px;
-                ">
-                    <div style="
-                        background:{PRIMARY};
-                        color:white;
-                        padding:12px 16px;
-                        border-radius:20px 20px 4px 20px;
-                        max-width:60%;
-                        box-shadow:0 2px 6px rgba(0,0,0,0.08);
-                        font-size:14px;
-                    ">
-                        {text}
-                    </div>
-                </div>
-                """, unsafe_allow_html=True)
-
+                st.markdown(f'<div class="user">{text}</div>', unsafe_allow_html=True)
             else:
-                st.markdown(f"""
-                <div style="
-                    display:flex;
-                    justify-content:flex-start;
-                    margin-bottom:12px;
-                ">
-                    <div style="
-                        background:#ffffff;
-                        padding:12px 16px;
-                        border-radius:20px 20px 20px 4px;
-                        max-width:70%;
-                        border:1px solid #E2E8F0;
-                        box-shadow:0 2px 6px rgba(0,0,0,0.05);
-                        font-size:14px;
-                    ">
-                        {text}
-                    </div>
-                </div>
-                """, unsafe_allow_html=True)
-
-                # AUDIO MUNCUL HANYA UNTUK AI NYA
-                audio = text_to_audio(text)
-                if audio:
-                    st.markdown("""
-                    <div style="
-                        margin-top:10px;
-                        margin-bottom:12px;
-                        padding:10px 12px;
-                        border-radius:12px;
-                        background:#F1F5F9;
-                        border:1px solid #E2E8F0;
-                        max-width:70%;
-                    ">
-                        <div style="
-                            font-size:12px;
-                            color:#64748B;
-                            margin-bottom:6px;
-                        ">
-                            🔊 Audio penjelasan
-                        </div>
-                    """, unsafe_allow_html=True)
-
-                    st.audio(audio)
-
-                    st.markdown("</div>", unsafe_allow_html=True)
-
-    st.markdown("<br>", unsafe_allow_html=True)
-
+                st.markdown(f'<div class="ai">{text}</div>', unsafe_allow_html=True)
+                audio_path = entry[2] if len(entry) > 2 else None
+                if audio_path and os.path.exists(audio_path):
+                    st.audio(audio_path, format="audio/wav")
 
     # INPUT BAR
     st.markdown("""
@@ -273,37 +326,24 @@ elif st.session_state.page == "Konsultasi":
     </style>
     """, unsafe_allow_html=True)
 
-    if not st.session_state.chat:
-        st.markdown("""
-        <div style="
-            text-align:center;
-            margin-top:20px;
-            margin-bottom:80px;
-            color:#94A3B8;
-            font-size:16px;
-        ">
-            💬 Belum ada percakapan<br>
-            Mulai dengan mengetik keluhan kamu di bawah
-        </div>
-        """, unsafe_allow_html=True)
+    # Pakai st.form supaya input otomatis kosong setelah submit
+    # (clear_on_submit=True) -> menghindari konflik widget key
+    # yang sebelumnya bikin error saat reset manual.
+    with st.form("chat_form", clear_on_submit=True):
+        col1, col2 = st.columns([6, 1])
 
+        with col1:
+            user_input = st.text_input(
+                "",
+                key="input_box",
+                placeholder="Ketik keluhan atau pertanyaan kamu...",
+                label_visibility="collapsed"
+            )
 
-    col1, col2 = st.columns([6,1])
+        with col2:
+            send = st.form_submit_button("Kirim ➤", use_container_width=True)
 
-    with col1:
-        user_input = st.text_input(
-            "",
-            value=st.session_state.input_text,
-            key="input_box",
-            placeholder="Ketik keluhan atau pertanyaan kamu...",
-            label_visibility="collapsed"
-        )
-
-    with col2:
-        send = st.button("Kirim ➤", use_container_width=True)
-
-
-    # SEND LOGIC 
+    # SEND LOGIC
     if send:
 
         clean_input = user_input.strip()
@@ -313,20 +353,60 @@ elif st.session_state.page == "Konsultasi":
         else:
             try:
                 with st.spinner("AI sedang menganalisis..."):
-                    response = generate_health_advice(clean_input)
 
-                # Tambah ke chat
+                    # generate_health_advice() di main.py ASLI
+                    # mengembalikan 2 nilai: (response, sources)
+                    response, sources = generate_health_advice(
+                        clean_input,
+                        st.session_state.chat_history,
+                        st.session_state.profile
+                    )
+
+                    audio_file = text_to_audio(response)
+
+                # Tambah ke chat untuk ditampilkan di UI
                 st.session_state.chat.append(("user", clean_input))
-                st.session_state.chat.append(("ai", response))
-
-                # Reset input
-                st.session_state.input_text = ""
+                st.session_state.chat.append(("ai", response, audio_file))
 
                 st.rerun()
 
             except Exception as e:
                 st.toast("Gagal memproses permintaan", icon="❌")
-                print("ERROR:", e)
+                st.error(f"ERROR: {e}")
+
+    if st.session_state.chat:
+        if st.button("🗑️ Reset Percakapan"):
+            st.session_state.chat = []
+            st.session_state.chat_history.clear()
+            st.rerun()
+
+
+# =========================================================
+# INSIGHT
+# =========================================================
+elif st.session_state.page == "Insight":
+
+    st.title("📊 Insight Kesehatan")
+
+    st.metric("Health Score", "82%")
+
+    st.progress(82)
+
+    st.markdown("### Prioritas Hari Ini")
+
+    st.success("Tidur lebih teratur")
+    st.success("Perbanyak minum air")
+    st.success("Aktivitas fisik 30 menit")
+
+    st.markdown("### Riwayat Konsultasi")
+
+    if not st.session_state.chat:
+        st.info("Belum ada riwayat konsultasi.")
+    else:
+        for entry in st.session_state.chat[-6:]:
+            role, text = entry[0], entry[1]
+            if role == "user":
+                st.write("👤", text)
 
 
 # FOOTER

@@ -1,7 +1,8 @@
 import os
 import time
+import torch
 print()
-
+cd
 from transformers import AutoTokenizer
 from transformers import AutoModelForCausalLM
 
@@ -77,9 +78,7 @@ print("Embedding selesai dibuat!")
 
 dimension = document_embeddings.shape[1]
 
-index = faiss.IndexFlatL2(
-    dimension
-)
+index = faiss.IndexFlatL2(dimension)
 
 index.add(
     document_embeddings.astype("float32")
@@ -201,7 +200,7 @@ def generate_health_advice(user_input, history, profile):
     
     context, sources = search_context(
         user_input
-    )
+)
     
     profile_context = f"""
 PROFIL PENGGUNA
@@ -344,7 +343,6 @@ Jawaban:
         if len(history) > MAX_HISTORY:
             del history[:-MAX_HISTORY]
 
-        return response, sources
 
     except Exception as e:
 
@@ -356,6 +354,11 @@ Jawaban:
 def text_to_audio(text):
 
     try:
+      
+        os.makedirs(
+            "outputs/audio",
+            exist_ok=True
+        )
 
         text = text.replace("\n", " ").strip()
 
