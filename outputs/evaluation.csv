@@ -1,57 +1,48 @@
 ﻿Question,User Profile,Generated Answer,Audio File,RAG Source,Similarity,Latency (s),Relevance (1-5),Coherence (1-5),Fluency (1-5),Diversity (1-5),Hallucination Analysis,Naturalness Audio (1-5),Intelligibility Audio (1-5),Audio Generation Time (s),Error Analysis
-Apa manfaat tidur cukup?,"Laki-laki, 21 tahun, 71 kg, 165 cm, sedang, Tujuan: Menjaga kesehatan dan meningkatkan kebugaran","Tidur yang cukup memiliki banyak manfaat untuk kesehatan. 
+Apa manfaat tidur cukup?,"Laki-laki, 21 tahun, 71 kg, 165 cm, sedang, Tujuan: Menjaga kesehatan dan meningkatkan kebugaran","Tidur yang cukup memiliki banyak manfaat untuk kesehatanmu. 
 
-1. Tidur yang cukup bisa membantu organ dalam tubuh bekerja lebih efektif, termasuk sistem imun, metabolisme, dan hormon.
+1. Tidur membantu otot dan saraf mu istirahat sehingga lebih segar saat aktif selanjutnya.
    
-2. Menghindari tidur terlalu kurang juga dapat mengurangi resiko stres tinggi dan tekanan psikologis lainnya, yang bisa merusak kesejahteraan fisik serta emosionalmu.
+2. Menyediakan waktu pemulihan organ dalam tubuh seperti hatimu agar bisa bekerja efektif lagi besok.
 
-3. Dengan tidur yang cukup, kamu akan merasa segar dan energik selagi aktif seharian ini, membuat aktivitas harian menjadi lebih produktif.
+3. Bisa juga membantu meningkatkan mood dan energi selama aktivitas harian.
 
-Anjurannya adalah mencoba untuk tidur antara 7 hingga 9 jam tiap malam bergantung pada usiamu agar mendapat manfaat optimal dari tidur. Selain itu, cobalah untuk tidur dan bangun pada waktu yang sama setiap hari. Jika masih ada masalah saat tidur, cek apakah ada hal-hal tertentu yang mengganggumu. Untuk situasi lanjutan, sangat disarankan untuk berkonsultasi langsung dengan dokter atau ahli bedah saraf profesional.",outputs/audio/output_1781612396.wav,Kemenkes RI,0.8196,84.56,,,,,,,,2.53,
-Berapa kebutuhan air putih harian?,"Laki-laki, 21 tahun, 71 kg, 165 cm, sedang, Tujuan: Menjaga kesehatan dan meningkatkan kebugaran","Mau tahu kebutuhan air putih harianmu? 
+4. Dapat melawan stress dan membuatmu merasa lebih rileks.
 
-1. Untuk orang dewasa seperti dirimu, biasanya disarankan mengonsumsi sekitar 2 liter atau 8 gelas air putih dalam sehari. Ini bisa mencakup minuman lain juga, selain air putih.
+Saran umum: Cobalah mencari rutinitas tidur dan bangun setiap hari pada jam yang sama. Hal ini akan membantu meningkatkan kualitas tidurnya. Selalu coba hindari konsumsi minuman bersoda dan alkohol beberapa jam sebelum tidur karena bisa ganggu tidur nyenyak. Ingat bahwa minimal tidurlah 8 jam seminggu demi minggu nanti.",outputs/audio\output_1782088114.wav,Kemenkes RI,0.7482,9.6,,,,,,,,1.76,
+Berapa kebutuhan air putih harian?,"Laki-laki, 21 tahun, 71 kg, 165 cm, sedang, Tujuan: Menjaga kesehatan dan meningkatkan kebugaran","Mengenai kebutuhan air putih harian, tergantung pada aktivitas fisik dan lingkungan tempat tinggal, tetapi rata-rata orang dewasa bisa mendapatkan cukup melalui minuman seperti susu, teh, jus buah, dan soda tanpa alkohol selain air putih. 
 
-2. Pastikan kamu tetap terhidrasi baik sehingga tubuh mendapatkan oksigen dan nutrien yang dibutuhkan.
-
-3. Jika cuaca panas atau aktivitas fisik intens, kamu mungkin butuh jumlah air lebih besar.
-
-4. Selalu ingat, ini hanyalah rekomendasi dasarnya. Cek lagi apa saja kebutuhan khususmu.
-
-Anjuran Umum:
-Pastikan kamu sering-sering diminum air putih agar tetap lembab dan segar!
-
-Saran Berkonsultasi Ke Tenaga Medis:
-Bila kamu merasa haus ekstra atau memiliki masalah kesehatan tertentu, minta nasihat kepada dokter atau ahli kesehatan profesional mu.",outputs/audio/output_1781612494.wav,Kemenkes RI,0.7329,95.97,,,,,,,,2.23,
-Apa dampak kurang tidur?,"Laki-laki, 21 tahun, 71 kg, 165 cm, sedang, Tujuan: Menjaga kesehatan dan meningkatkan kebugaran","Kurang tidur bisa membuatmu merasa lelah dan tidak fokus. Ini juga bisa meningkatkan resiko sakit maag, tekanan darah tinggi, dan masalah emosional seperti mood yang naik turun. 
-
-1. Coba letih diri lebih awal setiap malam untuk mendapatkan waktu tidur minimal 8 jam semalam.
-2. Hindari makan-makanan manis, alkohol, dan minuman bersoda beberapajam sebelum tidur.
-3. Lakukan aktivitas fisik sekitar dua puluh lima sampai sepuluh belas menit sehari agar tubuh tetap fit.
-4. Pastikan ruangan tempat tidurnya nyaman, dingin, dan tanpa cahaya biru dari gadget.
-
-Anjurannya, pastikan untuk cukup tidur demi kesehatanmu. Jika masih ada kendala, minta tolong kepada dokter.",outputs/audio/output_1781612591.wav,"Kemenkes RI, Alodokter",0.756,93.79,,,,,,,,1.79,
-Bagaimana cara menjaga hidrasi tubuh?,"Laki-laki, 21 tahun, 71 kg, 165 cm, sedang, Tujuan: Menjaga kesehatan dan meningkatkan kebugaran","Baiklah. Untuk menjaga kebutuhan hidrasi tubuhmu, ikuti petunjuk-petunjuk ini:
-
-1. Minumlah air segar selalu. Cobalah untuk minum sekitar 8 gelas air panas dalam satu hari, namun jumlah bisa sedikit lebih banyak bergantung pada aktivitas fisik dan cuaca.
-
-2. Hindari minuman bersoda dan teh hitam yang tinggi kafein karena mereka bisa membuat tubuh cepat haus. Kalau ingin minumannya manis, tambahkan jus buahan alami saja.
-
-3. Pastikan juga bahwa semua jenis suplemen dan vitamin yang dikonsumsiku sudah mencakup elemen-elemen penting seperti zat besi dan potasium yang diperlukan oleh organisme kita.
-
-4. Perhatikan rasa haus. Sebelum merasa sangat haus, cobalah untuk sering-sering diminum air. 
-
-Saat dirimu merasa lemas atau rewel tanpa ada kerusakan fisik yang tampak, hal itu bisa menjadi indikator bahwa tubuh butuh lebih banyak air. Selain itu, hindari konsumsi alkohol dan tembakau, ya!
-
-Ingat, semakin tua usia, maka keperluan akan air juga bertambah. Tapi ingat, narkoba dan alkohol sama sekali harus dicegah! Banyak bic",outputs/audio/output_1781612702.wav,"Kemenkes RI, Alodokter",0.6906,109.14,,,,,,,,2.46,
-Apakah minum kopi berlebihan berbahaya?,"Laki-laki, 21 tahun, 71 kg, 165 cm, sedang, Tujuan: Menjaga kesehatan dan meningkatkan kebugaran","Ya, minum kopi berlebihan bisa berbahaya. Konsumsi kafein berlebihan dapat memiliki efek negatif seperti hal-hal ini:
-
-1. Menyebabkan masalah tidur malam karena rasa lapar atau ketegangan.
+**Saran:**
+1. **Minumlah Air Putih Secara Rutinitas:** Mulailah hari dengan minum segelas air saat bangun tidur, kemudian tambahkan satu gelas setelah sarapan. 
    
-2. Dapat juga merangsang sistem saraf pusat hingga waktu tidur pagi terganggu.
+2. **Hidrasis Aktifitas Fisik:** Tambah jumlah minum air setelah melakukan latihan intensif karena tubuh akan melepaskan racun lewat urinan, sehingga penting untuk merendam otot dan organ internalmu dengan air.
 
-3. Bisa menyebabkan hipertensi atau tekanan darah tinggi untuk mereka yang sudah ada riwayat.
+3. **Perhatikan Penyimpanan Air**: Pastikan untuk mencuci botol air anda agar kontaminannya minimal. Selalu gunakan air bersih dalam waktu yang wajar supaya proses pembentukan bakteri menjadi minim.
 
-Dengan demikian, sangat penting untuk mengontrol jumlah kopi yang diminum setiap hari agar tetap seimbang dengan gaya hidupmu. 
+**Anjuran Umum:** Minum antara 1 sampai 2 gelas air putih setiap jam selama siang dan malam hingga total sekitar 2 - 2.5 liter per hari.
 
-Anjuranku adalah untuk mencoba reduksi sedikit demi sedikit dari jumlah kopi yang biasa dikonsumsi. Ingatlah bahwa istirahat cukup dan diet seimbang juga harus diperhitungkan untuk mendukung kesehatan fisik dan emosionalmu. Jika masih dirasai adanya gejala buruk, baiknya berkonsultasilah kepada dokter.",outputs/audio/output_1781612801.wav,Alodokter,0.8746,97.33,,,,,,,,1.85,
+**Saran Berkonsultasi Ke Tenaga Medis:** Bila gejalanya bertahan atau semakin parah, baiknya konsultasikan kepada dokter profesional.",outputs/audio\output_1782088129.wav,Kemenkes RI,0.7393,13.26,,,,,,,,2.46,
+Apa dampak kurang tidur?,"Laki-laki, 21 tahun, 71 kg, 165 cm, sedang, Tujuan: Menjaga kesehatan dan meningkatkan kebugaran","Maaf, saya hanya dapat membantu pertanyaan yang berkaitan dengan kesehatan dan pola hidup sehat.",outputs/audio\output_1782088134.wav,"Kemenkes RI, Alodokter",0.3079,1.76,,,,,,,,0.22,
+Bagaimana cara menjaga hidrasi tubuh?,"Laki-laki, 21 tahun, 71 kg, 165 cm, sedang, Tujuan: Menjaga kesehatan dan meningkatkan kebugaran","Untuk menjaga hidrasi tubuh, kamu bisa melakukan beberapa hal seperti ini:
+
+1. Konsumsilah banyak air putih selama sehari, biasanya minimal 8 gelas atau sekitar 2 liter. Cobalah untuk mencium aroma air bersih atau gunakan timer untuk ingat waktu minum.
+
+2. Pastikan juga untuk minum lebih sering ketika sedang aktif atau cuaca panas, karena tubuh akan melepaskan cairan melalui keringat.
+
+3. Hindari alkohol dan soda manis yang tinggi fruktosa karena mereka bisa membuatmu dehidrasi cepat. 
+
+4. Perbanyak buah-buahan segar dan sayuran dalam diet harianmu, karena mereka memiliki kandungan air yang tinggi.
+
+Ingat, semakin banyak kamu minum, semakin baik. Namun, penting juga untuk bertemu dokter jika masalah hidrasi persisten atau dikhawatirkan olehmu. Selalu simpan tas mini air hangat atau dingin untuk insentif tambahan.",outputs/audio\output_1782088143.wav,"Kemenkes RI, Alodokter",0.793,9.38,,,,,,,,1.73,
+Apakah minum kopi berlebihan berbahaya?,"Laki-laki, 21 tahun, 71 kg, 165 cm, sedang, Tujuan: Menjaga kesehatan dan meningkatkan kebugaran","Ya, minum kopi berlebihan bisa berbahaya tergantung pada sensitifitas individu. Untukmu, penting untuk memperhatikan frekuensinya dan jumlahnya agar tidak merugikan fungsi hatimu. 
+
+1. Cobalah mulai dari waktu istirahat pagi saja. Kurangi rata-rata dosismu hingga mencapai batas normal.
+   
+2. Pastikan kamu mendapatkan cukup tidur setiap malam karena kurang tidur juga bisa mempengaruhi reaksi tubuh terhadap kafein.
+
+3. Rutinkan aktivitas fisik seperti latihan aerobik selama seminggu sekali. Olahraga ini akan membantu kamu tetap fit dan fungsional meski memiliki tingkat kafein tertentu.
+
+4. Ingatlah untuk selalu minum air putih secukupnya agar tubuh tetap terhidrasi.
+
+Anjurannya adalah melakukan observasi diri sendiri tentang bagaimana efek kafein itu sendiri kepada kesehatanmu. Jika masih ada kesenitan atau gejalanya bertambah parah, baiknya berkonsultasilah langsung ke dokter. Selamat!",outputs/audio\output_1782088156.wav,Alodokter,0.7412,11.17,,,,,,,,1.99,
+Siapa presiden pertama indonesia?,"Laki-laki, 21 tahun, 71 kg, 165 cm, sedang, Tujuan: Menjaga kesehatan dan meningkatkan kebugaran","Maaf, saya hanya dapat membantu pertanyaan yang berkaitan dengan kesehatan dan pola hidup sehat.",outputs/audio\output_1782088160.wav,"Kemenkes RI, Alodokter",0.1387,1.62,,,,,,,,0.22,

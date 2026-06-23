@@ -56,7 +56,7 @@ AUDIO_OUTPUT_DIR = "outputs/audio"
 
 MAX_HISTORY = 10          # jumlah pesan (user+assistant) yang disimpan di memory
 RAG_TOP_K = 3              # jumlah dokumen relevan yang diambil dari FAISS
-MAX_NEW_TOKENS = 300       # batas panjang jawaban AI
+MAX_NEW_TOKENS = 350       # batas panjang jawaban AI
 TEMPERATURE = 0.7
 REPETITION_PENALTY = 1.2
 
@@ -69,6 +69,7 @@ TOPIK_DIPERBOLEHKAN = [
     "tidur",
     "hidrasi",
     "kesehatan mental ringan",
+    "kopi dan kafein"
 ]
 
 PESAN_DI_LUAR_TOPIK = (
@@ -277,6 +278,11 @@ Gunakan informasi berikut sebagai referensi utama.
 PROFIL PENGGUNA:
 
 {profile_context}
+
+PERCAKAPAN SEBELUMNYA:
+
+Kalau misal ada pertanyaan sebelumnya, maka jawablah pertanyaan pengguna berikut dengan mempertimbangkan riwayat percakapan sebelumnya. 
+
 
 INFORMASI DATASET:
 

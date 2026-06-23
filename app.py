@@ -23,6 +23,46 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+# ===============================
+# HIDE STREAMLIT HEADER
+# ===============================
+st.markdown("""
+<style>
+
+/* Header atas */
+header {
+    visibility: hidden;
+}
+
+/* Toolbar (Deploy & menu) */
+[data-testid="stToolbar"] {
+    display: none;
+}
+
+/* Header Streamlit */
+[data-testid="stHeader"] {
+    display: none;
+}
+
+/* Garis dekorasi atas */
+[data-testid="stDecoration"] {
+    display: none;
+}
+
+/* Menu kanan atas */
+#MainMenu {
+    visibility: hidden;
+}
+
+/* Footer bawaan Streamlit */
+footer {
+    visibility: hidden;
+}
+
+</style>
+""", unsafe_allow_html=True)
+#############################################
+
 # PATH
 BASE_DIR = os.path.dirname(__file__)
 def img(file):
@@ -174,15 +214,7 @@ div[data-testid="stForm"] .stButton > button,
     transform: translateY(-1px);
 }}
 
-/* ---------------- GLASS CARD ---------------- */
-.glass-card {{
-    backdrop-filter: blur(20px);
-    background: rgba(255,255,255,0.45);
-    border: 1px solid rgba(255,255,255,0.6);
-    border-radius: 28px;
-    padding: 28px;
-    transition: all 0.3s ease;
-}}
+
 
 .glass-card:hover {{
     transform: translateY(-3px);
@@ -205,6 +237,7 @@ div[data-testid="stForm"] .stButton > button,
     padding: 48px 44px;
     background: linear-gradient(135deg, rgba(7,100,78,0.10), rgba(7,100,78,0.03) 60%, transparent);
     border: 1px solid rgba(255,255,255,0.5);
+    margin-top: 25px;
 }}
 
 .hero-eyebrow {{
@@ -863,6 +896,15 @@ elif st.session_state.page == "Konsultasi":
                 audio_path = entry[2] if len(entry) > 2 else None
                 if audio_path and os.path.exists(audio_path):
                     st.audio(audio_path, format="audio/wav")
+                    
+                    rag_sources = entry[3] if len(entry) > 3 else []
+
+                    if rag_sources:
+
+                        st.caption("📚 Referensi RAG")
+
+                        for source in sorted(set(rag_sources)):
+                            st.markdown(f"- {source}")
 
     st.write("")
 
@@ -912,21 +954,43 @@ elif st.session_state.page == "Konsultasi":
                 # DOM yang reliable. Bubble custom akan muncul kembali
                 # setelah rerun (lihat riwayat chat di atas).
                 with st.spinner("AI sedang menganalisis..."):
-                    full_response = st.write_stream(
-                        generate_health_advice_stream(
-                            clean_input,
-                            st.session_state.chat_history,
-                            st.session_state.profile
-                        )
-                    )
 
+                    placeholder = st.empty()
+
+                    full_response = ""
+
+                    for chunk in generate_health_advice_stream(
+                        clean_input,
+                        st.session_state.chat_history,
+                        st.session_state.profile
+                    ):
+
+                        full_response += chunk
+
+                        placeholder.markdown(
+                            f"""
+                <div class="chat-row ai">
+                    <div class="chat-avatar">{icon('smart_toy',18)}</div>
+                    <div class="bubble-ai">
+                        {full_response.replace(chr(10), "<br>")}
+                    </div>
+                </div>
+                """,
+                            unsafe_allow_html=True
+                        )
+                #
                 # Setelah streaming selesai, baru buat audio dari teks lengkap
                 with st.spinner("Membuat audio..."):
                     audio_file = text_to_audio(full_response)
 
                 # Simpan ke chat history untuk ditampilkan ulang nanti
                 st.session_state.chat.append(("user", clean_input))
-                st.session_state.chat.append(("ai", full_response, audio_file))
+                st.session_state.chat.append((
+                    "ai",
+                    full_response,
+                    audio_file,
+                    sources
+                ))
 
                 st.rerun()
 

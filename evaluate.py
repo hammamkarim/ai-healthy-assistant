@@ -13,6 +13,7 @@ test_questions = [
     "Apa dampak kurang tidur?",
     "Bagaimana cara menjaga hidrasi tubuh?",
     "Apakah minum kopi berlebihan berbahaya?",
+    "Siapa presiden pertama indonesia?",
     #"Bagaimana pola hidup sehat untuk mahasiswa?",
     #"Apa manfaat olahraga rutin?",
     #"Bagaimana cara mengurangi konsumsi kafein?",
