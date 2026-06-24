@@ -140,15 +140,15 @@ http://localhost:8501
 # 📋 Cara Kerja Sistem
 
 1. Pengguna mengisi Healthy Profile.
-2. Pengguna mengirimkan pertanyaan atau keluhan kesehatan.
-3. Sistem melakukan preprocessing input.
-4. Embedding pertanyaan dibuat menggunakan Sentence Transformer.
-5. FAISS melakukan semantic similarity search.
-6. Dokumen yang paling relevan diambil melalui mekanisme RAG.
-7. Profil pengguna, riwayat percakapan, dan hasil RAG digabungkan menjadi prompt.
-8. Qwen2.5-3B-Instruct menghasilkan rekomendasi kesehatan.
-9. Jawaban ditampilkan secara streaming.
-10. Jawaban dikonversi menjadi audio menggunakan Piper TTS.
+2. Pengguna memasukkan pertanyaan.
+3. Sistem melakukan preprocessing sederhana terhadap input.
+4. Pertanyaan diubah menjadi embedding menggunakan Sentence Transformer.
+5. FAISS mencari dokumen yang paling relevan.
+6. Dokumen hasil retrieval dijadikan context (RAG).
+7. Context RAG, Healthy Profile, dan Conversation Memory digabung menjadi prompt.
+8. Prompt dikirim ke Qwen2.5-3B-Instruct.
+9. Model menghasilkan jawaban secara streaming.
+10. Jawaban dikonversi menjadi audio menggunakan Piper.
 11. Riwayat percakapan disimpan sebagai Conversation Memory.
 
 ---
