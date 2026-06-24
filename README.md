@@ -1,58 +1,162 @@
 # 🩺 AI Healthy Assistant
 
-AI Healthy Assistant adalah aplikasi berbasis web yang memberikan rekomendasi pola hidup sehat secara personal menggunakan teknologi Generative AI dengan output teks dan audio.
+AI Healthy Assistant adalah aplikasi berbasis web yang memanfaatkan teknologi **Generative AI** untuk memberikan rekomendasi pola hidup sehat secara personal berdasarkan profil pengguna, riwayat percakapan, dan informasi kesehatan yang diperoleh melalui **Retrieval Augmented Generation (RAG)**.
+
+Sistem menghasilkan rekomendasi dalam bentuk **teks** maupun **audio**, sehingga informasi kesehatan menjadi lebih mudah dipahami oleh pengguna.
 
 ---
 
-## 🚀 Fitur Utama
+# 🚀 Fitur Utama
 
-- 💬 Konsultasi kesehatan berbasis AI  
-- 🧠 Rekomendasi pola hidup sehat secara personal  
-- 🔊 Output dalam bentuk audio (Text-to-Speech)  
-- 🌐 Tampilan web interaktif menggunakan Streamlit  
-
----
-
-## 🌍 Akses Aplikasi
-
-### ✅ Online (Deploy)
-Aplikasi dapat diakses melalui:  
-https://ai-healthy-assistant.streamlit.app/
+- 💬 Konsultasi kesehatan berbasis Generative AI
+- 🧠 Rekomendasi pola hidup sehat yang dipersonalisasi
+- 👤 Healthy Profile (profil pengguna)
+- 📚 Retrieval Augmented Generation (RAG)
+- 🔎 Semantic Search menggunakan FAISS
+- 🧩 Embedding Model untuk pencarian konteks
+- 💭 Conversation Memory (AI mengingat percakapan sebelumnya)
+- ⚡ Streaming Response (jawaban muncul secara real-time)
+- 🔊 Text-to-Speech menggunakan Piper
+- 🌐 Antarmuka web interaktif menggunakan Streamlit
 
 ---
 
-### 💻 Menjalankan Secara Lokal
+# 🏗️ Arsitektur Sistem
 
-#### 1. Clone Repository
+Sistem terdiri dari beberapa komponen utama:
+
+- Local Large Language Model (Qwen2.5-3B-Instruct)
+- Sentence Transformer Embedding Model
+- FAISS Vector Database
+- Retrieval Augmented Generation (RAG)
+- Conversation Memory
+- Healthy User Profile
+- Piper Text-to-Speech
+- Streamlit Web Interface
+
+---
+
+# 🤖 Model yang Digunakan
+
+## Large Language Model (LLM)
+
+- Qwen/Qwen2.5-3B-Instruct
+
+## Embedding Model
+
+- sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+
+## Text-to-Speech
+
+- Piper TTS
+- id_ID-news_tts-medium
+
+---
+
+# 📂 Struktur Project
+
+```
+AI-Healthy-Assistant
+│
+├── app.py
+├── main.py
+├── requirements.txt
+│
+├── dataset/
+│   └── health_dataset.json
+│
+├── assets/
+│
+├── models/
+│   └── piper/
+│
+├── outputs/
+│   └── audio/
+│
+└── README.md
+```
+
+---
+
+# 💻 Menjalankan Secara Lokal
+
+## 1. Clone Repository
+
 ```bash
 git clone https://github.com/username/ai-healthy-assistant.git
+
 cd ai-healthy-assistant
 ```
 
-#### 2. Install Dependencies
+---
+
+## 2. Install Dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
 
-#### 3. Setup API Key
-```bash
-GROQ_API_KEY = "API_KEY_KAMU"
-```
-Catatan:
-- File .env.example hanya sebagai contoh
-- Gunakan .env untuk menyimpan API key asli
+---
 
-#### 4. Jalankan Aplikasi
+## 3. Jalankan Aplikasi
+
 ```bash
 streamlit run app.py
 ```
+
+Aplikasi akan berjalan pada:
+
+```
+http://localhost:8501
+```
+
 ---
 
-## 🧠 Teknologi yang Digunakan
-- Streamlit (Frontend)
-- Groq - LLaMA (LLM / Text-to-Text)
-- gTTS (Text-to-Speech)
+# ⚙️ Teknologi yang Digunakan
+
+- Python
+- Streamlit
+- Hugging Face Transformers
+- PyTorch
+- Qwen2.5-3B-Instruct
+- Sentence Transformers
+- FAISS
+- Piper TTS
+- NumPy
+
 ---
 
-## ⚠️ Disclaimer
-Aplikasi ini hanya bertujuan untuk edukasi dan tidak menggantikan tenaga medis profesional.
+# 📋 Cara Kerja Sistem
+
+1. Pengguna mengisi Healthy Profile.
+2. Pengguna mengirimkan pertanyaan atau keluhan kesehatan.
+3. Sistem melakukan preprocessing input.
+4. Embedding pertanyaan dibuat menggunakan Sentence Transformer.
+5. FAISS melakukan semantic similarity search.
+6. Dokumen yang paling relevan diambil melalui mekanisme RAG.
+7. Profil pengguna, riwayat percakapan, dan hasil RAG digabungkan menjadi prompt.
+8. Qwen2.5-3B-Instruct menghasilkan rekomendasi kesehatan.
+9. Jawaban ditampilkan secara streaming.
+10. Jawaban dikonversi menjadi audio menggunakan Piper TTS.
+11. Riwayat percakapan disimpan sebagai Conversation Memory.
+
+---
+
+# ✨ Fitur AI
+
+- Local Open Source LLM
+- Retrieval Augmented Generation (RAG)
+- Semantic Search
+- Embedding Model
+- Personalized Recommendation
+- Conversation Memory
+- Streaming Response
+- Text-to-Speech
+
+---
+
+# 📌 Disclaimer
+
+AI Healthy Assistant hanya digunakan sebagai media edukasi mengenai pola hidup sehat.
+
+Aplikasi ini **tidak menggantikan tenaga medis profesional**, tidak memberikan diagnosis penyakit, dan tidak digunakan sebagai dasar pengambilan keputusan medis. Apabila keluhan berlanjut atau memburuk, pengguna disarankan untuk berkonsultasi dengan tenaga kesehatan.
