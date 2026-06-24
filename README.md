@@ -111,6 +111,10 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
+> **Catatan**
+>
+> Saat pertama kali dijalankan, model LLM dan model embedding akan diunduh dari Hugging Face sehingga proses startup dapat memerlukan beberapa menit, tergantung kecepatan internet.
+
 Aplikasi akan berjalan pada:
 
 ```
