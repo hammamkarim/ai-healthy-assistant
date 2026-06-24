@@ -90,7 +90,7 @@ AI-Healthy-Assistant
 ## 1. Clone Repository
 
 ```bash
-git clone https://github.com/username/ai-healthy-assistant.git
+git clone https://github.com/hammamkarim/ai-healthy-assistant.git
 
 cd ai-healthy-assistant
 ```
