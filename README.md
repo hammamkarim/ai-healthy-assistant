@@ -1,5 +1,12 @@
 # 🩺 AI Healthy Assistant
 
+![Python](https://img.shields.io/badge/Python-3.11+-blue)
+![Streamlit](https://img.shields.io/badge/Streamlit-Web_App-red)
+![Transformers](https://img.shields.io/badge/HuggingFace-Transformers-yellow)
+![FAISS](https://img.shields.io/badge/FAISS-Vector_Search-green)
+![Piper](https://img.shields.io/badge/Piper-TTS-purple)
+![License](https://img.shields.io/badge/License-Educational-lightgrey)
+
 AI Healthy Assistant adalah aplikasi berbasis web yang memanfaatkan teknologi **Generative AI** untuk memberikan rekomendasi pola hidup sehat secara personal berdasarkan profil pengguna, riwayat percakapan, dan informasi kesehatan yang diperoleh melalui **Retrieval Augmented Generation (RAG)**.
 
 Sistem menghasilkan rekomendasi dalam bentuk **teks** maupun **audio**, sehingga informasi kesehatan menjadi lebih mudah dipahami oleh pengguna.
